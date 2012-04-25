@@ -50,8 +50,16 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IDAOAtividade.cs" />
+    <Compile Include="IDAOAvaliacao360.cs" />
     <Compile Include="IDAOBurnDown.cs" />
+    <Compile Include="IDAOEstoria.cs" />
+    <Compile Include="IDAOImpedimentos.cs" />
+    <Compile Include="IDAOPerfilUsuario.cs" />
     <Compile Include="IDAOPermissao.cs" />
+    <Compile Include="IDAOProjeto.cs" />
+    <Compile Include="IDAOSprint.cs" />
+    <Compile Include="IDAOTipoAtividade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
