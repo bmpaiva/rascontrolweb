@@ -459,8 +459,178 @@ namespace WebService
 
       #endregion
 
+      #region Estoria
 
+        [WebMethod]
+        public void CadastrarEstoria(Estoria estoria)
+        {
+          try
+          {
+            Fachada.Fachada.Instancia.CadastrarEstoria(estoria);
 
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
+        }
+
+        [WebMethod]
+        public void AlterarEstoria(Estoria estoria)
+        {
+          try
+          {
+            Fachada.Fachada.Instancia.AlterarEstoria(estoria);
+
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
+        }
+
+        [WebMethod]
+        public void DeletarEstoria(int idEstoria)
+        {
+          try
+          {
+            Fachada.Fachada.Instancia.DeletarEstoria(idEstoria);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
+        }
+
+        [WebMethod]
+        public Estoria ConsultarEstoriaPorId(int idEstoria)
+        {
+          try
+          {
+
+            return Fachada.Fachada.Instancia.ConsultarEstoriaPorId(idEstoria);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
+        }
+
+        [WebMethod]
+        public List<Estoria> ConsultarAllEstoriaFiltros(int codigo, string descricao)
+        {
+          try
+          {
+            return Fachada.Fachada.Instancia.ConsultarAllEstoriaFiltros(codigo, descricao);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
+        }
+
+        [WebMethod]
+        public List<Estoria> ListarEstoria()
+        {
+          try
+          {
+            return Fachada.Fachada.Instancia.ListarEstoria();
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
+        }
+
+      #endregion
+
+      #region Projeto
+
+        [WebMethod]
+        public void CadastrarProjeto(Projeto projeto)
+        {
+          try
+          {
+            Fachada.Fachada.Instancia.CadastrarProjeto(projeto);
+
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
+        }
+
+        [WebMethod]
+        public void AlterarProjeto(Projeto projeto)
+        {
+          try
+          {
+            Fachada.Fachada.Instancia.AlterarProjeto(projeto);
+
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
+        }
+
+        [WebMethod]
+        public void DeletarProjeto(int idProjeto)
+        {
+          try
+          {
+            Fachada.Fachada.Instancia.DeletarProjeto(idProjeto);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
+        }
+
+        [WebMethod]
+        public Projeto ConsultarProjetoPorId(int idProjeto)
+        {
+          try
+          {
+
+            return Fachada.Fachada.Instancia.ConsultarProjetoPorId(idProjeto);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
+        }
+
+        [WebMethod]
+        public List<Projeto> ConsultarAllProjetoFiltros(int codigo, string descricao)
+        {
+          try
+          {
+            return Fachada.Fachada.Instancia.ConsultarAllProjetoFiltros(codigo, descricao);
+          }
+          catch (Exception ex)
+          {
+            
+            throw ex;
+            
+            
+          }
+        }
+
+        [WebMethod]
+        public List<Projeto> ListarProjeto()
+        {
+          try
+          {
+            return Fachada.Fachada.Instancia.ListarProjeto();
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
+        }
+
+      #endregion
 
     }
 }
