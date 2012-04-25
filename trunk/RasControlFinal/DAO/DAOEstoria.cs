@@ -28,7 +28,8 @@ namespace DAO
           Estoria e = new Estoria();
           e.Codigo = (int)dr["ID_ESTORIA"];
           IDAOProjeto iDaoProjeto = new DAOProjeto();
-          e.IdProjeto = iDaoProjeto.ConsultarProjetoCodigo(int.Parse(dr["ID_PROJETO"].ToString()));       
+          e.IdProjeto = iDaoProjeto.ConsultarProjetoCodigo(int.Parse(dr["ID_PROJETO"].ToString()));     
+          //e.IdProjeto = (int)dr["ID_PROJETO"];
           e.Descricao = (string)dr["DESCRICAO"].ToString();         
           e.Sp = double.Parse(dr["SP"].ToString());
           e.Bv = double.Parse(dr["BV"].ToString());
@@ -69,6 +70,8 @@ namespace DAO
         e = new Estoria();
         e.Codigo = (int)dr["ID_ESTORIA"];
         IDAOProjeto iDaoProjeto = new DAOProjeto();
+        //e.IdProjeto.Codigo = Convert.ToInt32(iDaoProjeto.ConsultarProjetoCodigo(int.Parse(dr["ID_PROJETO"].ToString())));
+        //e.IdProjeto.Codigo = int.Parse(dr["ID_PROJETO"].ToString());
         e.IdProjeto = iDaoProjeto.ConsultarProjetoCodigo(int.Parse(dr["ID_PROJETO"].ToString()));
         e.Descricao = (string)dr["DESCRICAO"].ToString();
         e.Sp = double.Parse(dr["SP"].ToString());
@@ -108,10 +111,12 @@ namespace DAO
           e.Codigo = (int)dr["ID_ESTORIA"];
           IDAOProjeto iDaoProjeto = new DAOProjeto();
           e.IdProjeto = iDaoProjeto.ConsultarProjetoCodigo(int.Parse(dr["ID_PROJETO"].ToString()));
+          //e.IdProjeto = (int)dr["ID_PROJETO"];
           e.Descricao = (string)dr["DESCRICAO"].ToString();
           e.Sp = double.Parse(dr["SP"].ToString());
           e.Bv = double.Parse(dr["BV"].ToString());
           e.Roi = double.Parse(dr["ROI"].ToString());
+          lista.Add(e);
         }
         dr.Close();
 
