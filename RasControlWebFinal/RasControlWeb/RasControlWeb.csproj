@@ -103,6 +103,8 @@
     <Content Include="ManutencaoPermissao.aspx" />
     <Content Include="ManutencaoPerfilUsuario.aspx" />
     <Content Include="ListagemPerfilUsuario.aspx" />
+    <Content Include="ManutencaoEstoria.aspx" />
+    <Content Include="ListagemEstoria.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BurnDown.aspx.cs">
@@ -164,6 +166,20 @@
     </Compile>
     <Compile Include="ListagemPerfilUsuario.aspx.designer.cs">
       <DependentUpon>ListagemPerfilUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManutencaoEstoria.aspx.cs">
+      <DependentUpon>ManutencaoEstoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManutencaoEstoria.aspx.designer.cs">
+      <DependentUpon>ManutencaoEstoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListagemEstoria.aspx.cs">
+      <DependentUpon>ListagemEstoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListagemEstoria.aspx.designer.cs">
+      <DependentUpon>ListagemEstoria.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
