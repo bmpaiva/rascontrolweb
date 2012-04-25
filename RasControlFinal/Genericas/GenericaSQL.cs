@@ -186,6 +186,7 @@ namespace Genericas
             query.Append(" And ID_PERFIL_USUARIO = " + codigo.ToString());
           }
           return query.ToString();
+
         }
 
         public static string ConsultarAllPerfilUsuarioFiltros(int codigo, string descricao)
@@ -411,7 +412,8 @@ namespace Genericas
         public static string ConsultarAllEstoriaFiltros(int codigo, string descricao)
         {
           StringBuilder query = new StringBuilder();
-          query.Append(" SELECT ID_ESTORIA, DESCRICAO");
+          query.Append(" SELECT ID_ESTORIA, ID_PROJETO, DESCRICAO, SP, BV, ROI");
+          //query.Append(" SELECT ID_ESTORIA, DESCRICAO");
           query.Append(" FROM TBESTORIA ");
           query.Append(" Where IND_ATIVO = 'S'");
           if (descricao != "")
@@ -428,7 +430,7 @@ namespace Genericas
         public static string ConsultarAllEstoria()
         {
           StringBuilder query = new StringBuilder();
-          query.Append(" SELECT ID_ESTORIA, DESCRICAO ");
+          query.Append(" SELECT ID_ESTORIA, ID_PROJETO, DESCRICAO, SP, BV, ROI ");
           query.Append(" FROM TBESTORIA ");
           query.Append(" Where IND_ATIVO = 'S'");
 
@@ -438,18 +440,18 @@ namespace Genericas
         public static string CadastrarEstoria(Estoria estoria)
         {
           return "INSERT INTO TBESTORIA " +
-                 " ( ID_PROJETO, " +
-                 " DESCRICAO, " +
-                 " SP, " +
-                 " BV, " +
-                 " ROI, " +
-                 " IND_ATIVO  ) " +
-                 " VALUES (" +
-                 estoria.IdProjeto +
-                 " '" + estoria.Descricao + "', " +
-                 estoria.Sp +
-                 estoria.Bv +
-                 estoria.Roi +
+                 "(ID_PROJETO, " +
+                 "DESCRICAO, " +
+                 "SP, " +
+                 "BV, " +
+                 "ROI, " +
+                 "IND_ATIVO) " +
+                 "VALUES (" +
+                 estoria.IdProjeto.Codigo +
+                 ",'" + estoria.Descricao + "', " +
+                 estoria.Sp +","+
+                 estoria.Bv + "," +
+                 estoria.Roi + "," +
                  " 'S' " +
                  " );";
         }
@@ -460,7 +462,7 @@ namespace Genericas
           + "DESCRICAO = '" + estoria.Descricao + "' , "
           + "SP = '" + estoria.Sp + "' , "
           + "BV = " + estoria.Bv + ", "
-          + "ROI = " + estoria.Roi + ", "
+          + "ROI = " + estoria.Roi
           
           + " WHERE ID_ESTORIA = " + estoria.Codigo + " AND  IND_ATIVO = 'S'";
         }
@@ -470,6 +472,7 @@ namespace Genericas
           return "UPDATE TBESTORIA SET IND_ATIVO = 'N' WHERE ID_ESTORIA = " + idEstoria + " AND  IND_ATIVO = 'S'";
         }
 
+       
 
       #endregion
 
