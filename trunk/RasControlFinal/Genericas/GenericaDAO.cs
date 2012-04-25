@@ -44,7 +44,7 @@ namespace Genericas
         {
             try
             {
-                connectionString = "Data Source=.\\SQLEXPRESS;AttachDbFilename=\"E:\\bck\\RasControl.mdf\";Integrated Security=True;User Instance=True;";
+                connectionString = "Data Source=.\\SQLEXPRESS;AttachDbFilename=\"E:\\bck\\RasControl.mdf\";Integrated Security=True;User Instance=True;MultipleActiveResultSets = True;";
                 //connectionString = "driver=MySQL ODBC 5.1 Driver;server=localhost;uid=root;pwd=;_database=bdrascontrol";
                 if (connectionString == null)
                 {
