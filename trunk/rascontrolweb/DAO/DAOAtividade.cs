@@ -10,139 +10,139 @@ using IDAO;
 
 namespace DAO
 {
-    public class DAOAtividade : IDAOAtividade
-    {
+  public class DAOAtividade : IDAOAtividade
+  {
 
-        public List<Atividade> ConsultarAllAtividade()
-        {
-            GenericaDAO dao = GenericaDAO.getInstancia();
+      public List<Atividade> ConsultarAllAtividade()
+      {
+          GenericaDAO dao = GenericaDAO.getInstancia();
 
-            try
-            {
-                List<Atividade> lista = new List<Atividade>();
-                string sql = GenericaSQL.ConsultarAllAtividade();
+          try
+          {
+              List<Atividade> lista = new List<Atividade>();
+              string sql = GenericaSQL.ConsultarAllAtividade();
 
-                SqlDataReader dr = dao.ExecuteReader(CommandType.Text, sql);
+              SqlDataReader dr = dao.ExecuteReader(CommandType.Text, sql);
 
-                while (dr.Read())
-                {
-                    Atividade atividade = new Atividade();
-                    atividade.Id_Atividade = (int)dr["ID_ATIVIDADE"];
-                    atividade.Id_Tipo_Atividade = (int)dr["ID_TIPO_ATIVIDADE"];
-                    atividade.Id_Estoria_Sprint = (int)dr["ID_ESTORIA_SPRINT"];
-                    atividade.Descricao = (string)dr["DESCRICAO"].ToString();
-                    atividade.Observacao = (string)dr["OBSERVACAO"].ToString();
-                    atividade.Duracao_Estimada = (float)dr["DURACAO_ESTIMADA"];
-                    atividade.Duracao_Realizada = (float)dr["DURACAO_REALIZADA"];
-                    atividade.Status = (string)dr["STATUS"].ToString();
-                }
-                dr.Close();
+              while (dr.Read())
+              {
+                  Atividade atividade = new Atividade();
+                  atividade.Id_Atividade = (int)dr["ID_ATIVIDADE"];
+                  atividade.Id_Tipo_Atividade = (int)dr["ID_TIPO_ATIVIDADE"];
+                  atividade.Id_Estoria_Sprint = (int)dr["ID_ESTORIA_SPRINT"];
+                  atividade.Descricao = (string)dr["DESCRICAO"].ToString();
+                  atividade.Observacao = (string)dr["OBSERVACAO"].ToString();
+                  atividade.Duracao_Estimada = (float)dr["DURACAO_ESTIMADA"];
+                  atividade.Duracao_Realizada = (float)dr["DURACAO_REALIZADA"];
+                  atividade.Status = (string)dr["STATUS"].ToString();    
+              }
+              dr.Close();
 
-                return lista;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
+              return lista;
+          }
+          catch (Exception ex)
+          {
+              throw ex;
+          }
+          finally
+          {
 
-            }
-        }
+          }
+      }
 
-        public Atividade ConsultarAtividadeCodigo(int id_atividade)
-        {
-            GenericaDAO dao = GenericaDAO.getInstancia();
+      public Atividade ConsultarAtividadeCodigo(int id_atividade)
+      {
+          GenericaDAO dao = GenericaDAO.getInstancia();
 
-            try
-            {
-                Atividade atividade = null;
-                string sql = GenericaSQL.ConsultarAtividadeCodigo(id_atividade);
+          try
+          {
+              Atividade atividade = null;
+              string sql = GenericaSQL.ConsultarAtividadeCodigo(id_atividade);
 
-                SqlDataReader dr = dao.ExecuteReader(CommandType.Text, sql);
+              SqlDataReader dr = dao.ExecuteReader(CommandType.Text, sql);
 
-                dr.Read();
+              dr.Read();
 
-                atividade = new Atividade();
-                atividade.Id_Atividade = (int)dr["ID_ATIVIDADE"];
-                atividade.Id_Tipo_Atividade = (int)dr["ID_TIPO_ATIVIDADE"];
-                atividade.Id_Estoria_Sprint = (int)dr["ID_ESTORIA_SPRINT"];
-                atividade.Descricao = (string)dr["DESCRICAO"].ToString();
-                atividade.Observacao = (string)dr["OBSERVACAO"].ToString();
-                atividade.Duracao_Estimada = Convert.ToDouble(dr["DURACAO_ESTIMADA"].ToString());
-                atividade.Duracao_Realizada = Convert.ToDouble(dr["DURACAO_REALIZADA"].ToString());
-                atividade.Status = (string)dr["STATUS"].ToString();
+              atividade = new Atividade();
+              atividade.Id_Atividade = (int)dr["ID_ATIVIDADE"];
+              atividade.Id_Tipo_Atividade = (int)dr["ID_TIPO_ATIVIDADE"];
+              atividade.Id_Estoria_Sprint = (int)dr["ID_ESTORIA_SPRINT"];
+              atividade.Descricao = (string)dr["DESCRICAO"].ToString();
+              atividade.Observacao = (string)dr["OBSERVACAO"].ToString();
+              atividade.Duracao_Estimada = Convert.ToDouble(dr["DURACAO_ESTIMADA"].ToString());
+              atividade.Duracao_Realizada = Convert.ToDouble(dr["DURACAO_REALIZADA"].ToString());
+              atividade.Status = (string)dr["STATUS"].ToString();
+           
+              dr.Close();
 
-                dr.Close();
+              return atividade;
+          }
+          catch (Exception ex)
+          {
+              throw ex;
+          }
+          finally
+          {
 
-                return atividade;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
+          }
+      }
 
-            }
-        }
+      public List<Atividade> ConsultarAllAtividadeFiltros(int id_atividade, string descricao)
+      {
+          GenericaDAO dao = GenericaDAO.getInstancia();
 
-        public List<Atividade> ConsultarAllAtividadeFiltros(int id_atividade, string descricao)
-        {
-            GenericaDAO dao = GenericaDAO.getInstancia();
+          try
+          {
+              List<Atividade> lista = new List<Atividade>();
+              string sql = GenericaSQL.ConsultarAllAtividadeFiltros(id_atividade,  descricao);
 
-            try
-            {
-                List<Atividade> lista = new List<Atividade>();
-                string sql = GenericaSQL.ConsultarAllAtividadeFiltros(id_atividade, descricao);
+              SqlDataReader dr = dao.ExecuteReader(CommandType.Text, sql);
 
-                SqlDataReader dr = dao.ExecuteReader(CommandType.Text, sql);
+              while (dr.Read())
+              {
+                  Atividade atividade = new Atividade();
+                  atividade.Id_Atividade = (int)dr["ID_ATIVIDADE"];
+                  atividade.Id_Tipo_Atividade = (int)dr["ID_TIPO_ATIVIDADE"];
+                  atividade.Id_Estoria_Sprint = (int)dr["ID_ESTORIA_SPRINT"];
+                  atividade.Descricao = (string)dr["DESCRICAO"].ToString();
+                  atividade.Duracao_Estimada = (double)dr["DURACAO_ESTIMADA"];
+                  atividade.Duracao_Realizada = (double)dr["DURACAO_REALIZADA"];
+                  lista.Add(atividade);
+              }
+              dr.Close();
 
-                while (dr.Read())
-                {
-                    Atividade atividade = new Atividade();
-                    atividade.Id_Atividade = (int)dr["ID_ATIVIDADE"];
-                    atividade.Id_Tipo_Atividade = (int)dr["ID_TIPO_ATIVIDADE"];
-                    atividade.Id_Estoria_Sprint = (int)dr["ID_ESTORIA_SPRINT"];
-                    atividade.Descricao = (string)dr["DESCRICAO"].ToString();
-                    atividade.Duracao_Estimada = (double)dr["DURACAO_ESTIMADA"];
-                    atividade.Duracao_Realizada = (double)dr["DURACAO_REALIZADA"];
-                    lista.Add(atividade);
-                }
-                dr.Close();
+              return lista;
+          }
+          catch (Exception ex)
+          {
+              throw ex;
+          }
+          finally
+          {
 
-                return lista;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
+          }
+      }
 
-            }
-        }
+      public void CadastrarAtividade(Atividade atividade)
+      {
+          string sql = GenericaSQL.CadastrarAtividade(atividade);
+          GenericaDAO dao = GenericaDAO.getInstancia();
 
-        public void CadastrarAtividade(Atividade atividade)
-        {
-            string sql = GenericaSQL.CadastrarAtividade(atividade);
-            GenericaDAO dao = GenericaDAO.getInstancia();
+          dao.ExecuteNonQuery(CommandType.Text, sql);
+      }
 
-            dao.ExecuteNonQuery(CommandType.Text, sql);
-        }
+      public void UpdateAtividade(Atividade atividade)
+      {
+          string sql = GenericaSQL.UpdateAtividade(atividade);
+          GenericaDAO dao = GenericaDAO.getInstancia();
+          dao.ExecuteNonQuery(CommandType.Text, sql);
+      }
 
-        public void UpdateAtividade(Atividade atividade)
-        {
-            string sql = GenericaSQL.UpdateAtividade(atividade);
-            GenericaDAO dao = GenericaDAO.getInstancia();
-            dao.ExecuteNonQuery(CommandType.Text, sql);
-        }
-
-        public void DeleteAtividade(int id_atividade)
-        {
-            string sql = GenericaSQL.DeleteAtividade(id_atividade);
-            GenericaDAO dao = GenericaDAO.getInstancia();
-            dao.ExecuteNonQuery(CommandType.Text, sql);
-        }
-    }
+      public void DeleteAtividade(int id_atividade)
+      {
+          string sql = GenericaSQL.DeleteAtividade(id_atividade);
+          GenericaDAO dao = GenericaDAO.getInstancia();
+          dao.ExecuteNonQuery(CommandType.Text, sql);
+      }
+  }
 }

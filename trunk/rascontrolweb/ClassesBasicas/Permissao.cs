@@ -11,7 +11,7 @@ namespace ClassesBasicas
         private string descricao;
         private string observacao;
         private string erro;
-        
+                
 
         public Permissao()
         {
@@ -21,25 +21,25 @@ namespace ClassesBasicas
         public int Codigo
         {
             get { return this.codigo; }
-            set { this.codigo = Codigo; }
+            set { this.codigo = value; }
         }
 
         public string Descricao
         {
             get { return this.descricao; }
-            set { this.descricao = Descricao; }
+            set { this.descricao = value; }
         }
 
         public string Observacao
         {
             get { return this.observacao; }
-            set { this.observacao = Observacao; }
+            set { this.observacao = value; }
         }
 
         public string Erro
         {
-            get { return erro; }
-            set { erro = value; }
+            get { return this.erro; }
+            set { this.erro = value; }
         }
    
 

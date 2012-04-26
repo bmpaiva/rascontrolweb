@@ -8,7 +8,7 @@ using Genericas;
 using System.Data.SqlClient;
 using System.Data;
 
-namespace DAO
+namespace DAO 
 {
     public class DAOSprint : IDAOSprint
     {

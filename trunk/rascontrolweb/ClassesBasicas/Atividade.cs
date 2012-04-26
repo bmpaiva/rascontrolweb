@@ -5,9 +5,9 @@ using System.Web;
 
 namespace ClassesBasicas
 {
-    public class Atividade
-    {
-        private int id_atividade;
+  public class Atividade
+  {
+     private int id_atividade;
         private int id_tipo_atividade;
         private int id_estoria_sprint;
         private string descricao;
@@ -76,7 +76,7 @@ namespace ClassesBasicas
             set { this.ind_ativo = value; }
         }
 
+    
 
-
-    }
+  }
 }

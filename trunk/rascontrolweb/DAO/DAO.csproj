@@ -56,7 +56,7 @@
     <Compile Include="DAOEstoria.cs" />
     <Compile Include="DAOImpedimentos.cs" />
     <Compile Include="DAOPerfilUsuario.cs" />
-    <Compile Include="DAOPermmisao.cs" />
+    <Compile Include="DAOPermissao.cs" />
     <Compile Include="DAOProjeto.cs" />
     <Compile Include="DAOSprint.cs" />
     <Compile Include="DAOTipoAtividade.cs" />
