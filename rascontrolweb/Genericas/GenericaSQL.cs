@@ -105,31 +105,71 @@ namespace Genericas
 
         #region permissao
 
-        public static string ConsultarPermissao(Permissao permissao)
+        public static string ConsultarPermissaoCodigo(int codigo)
         {
             StringBuilder query = new StringBuilder();
             query.Append(" SELECT ID_PERMISSAO, DESCRICAO, OBSERVACAO ");
             query.Append(" FROM TBPERMISSOES ");
-            if (permissao != null && permissao.Descricao != "")
+            query.Append(" Where IND_ATIVO = 'S'");
+            if (codigo.ToString() != "")
             {
-                query.Append(" Where DESCRICAO = " + permissao.Descricao);
+                query.Append(" And ID_PERMISSAO = " + codigo.ToString());
             }
+            return query.ToString();
+        }
+
+        public static string ConsultarAllPermissaoFiltros(int codigo, string descricao)
+        {
+            StringBuilder query = new StringBuilder();
+            query.Append(" SELECT ID_PERMISSAO, DESCRICAO, OBSERVACAO ");
+            query.Append(" FROM TBPERMISSOES ");
+            query.Append(" Where IND_ATIVO = 'S'");
+            if (descricao != "")
+            {
+                query.Append(" And DESCRICAO = '" + descricao + "'");
+            }
+            if (codigo >= 0)
+            {
+                query.Append(" And ID_PERMISSAO = " + codigo.ToString());
+            }
+            return query.ToString();
+        }
+
+        public static string ConsultarAllPermissao()
+        {
+            StringBuilder query = new StringBuilder();
+            query.Append(" SELECT ID_PERMISSAO, DESCRICAO, OBSERVACAO ");
+            query.Append(" FROM TBPERMISSOES ");
+            query.Append(" Where IND_ATIVO = 'S'");
+
             return query.ToString();
         }
 
         public static string CadastrarPermissao(Permissao permissao)
         {
-            return "INSERT INTO tbpermissoes " +
-                   " (ID_PERMISSAO, " +
-                   " DESCRICAO, " +
-                   " OBSERVACAO) " +                   
+            return "INSERT INTO TBPERMISSOES " +
+                   " ( DESCRICAO, " +
+                   " OBSERVACAO, " +
+                   " IND_ATIVO  ) " +
                    " VALUES (" +
-                   + permissao.Codigo + ", " +
                    " '" + permissao.Descricao + "', " +
-                   " '" + permissao.Observacao + "' " +                  
+                   " '" + permissao.Observacao + "', " +
+                    " 'S' " +
                    " );";
         }
 
+        public static string UpdatePermissao(Permissao permissao)
+        {
+            return "UPDATE TBPERMISSOES SET "
+            + "DESCRICAO = '" + permissao.Descricao + "' , "
+             + "OBSERVACAO = '" + permissao.Observacao + "' "
+            + " WHERE ID_PERMISSAO = " + permissao.Codigo + " AND  IND_ATIVO = 'S'";
+        }
+
+        public static string DeletePermissao(int idPermissao)
+        {
+            return "UPDATE TBPERMISSOES SET IND_ATIVO = 'N' WHERE ID_PERMISSAO = " + idPermissao + " AND  IND_ATIVO = 'S'";
+        }
 
 
         #endregion
