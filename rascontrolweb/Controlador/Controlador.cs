@@ -28,7 +28,7 @@ namespace Controlador
         {
             try
             {
-                iDaoPermissao = new DAOPermmisao();
+                iDaoPermissao = new DAOPermissao();
                 iDAOBurnDown = new DAOBurnDown();
 
                 iDaoPerfilUsuario = new DAOPerfilUsuario();
@@ -57,9 +57,8 @@ namespace Controlador
             else if (permissao.Observacao == "")
             {
                 throw new ExceptionGeral("A observação da permissão não pode ser nula");
-            }            
+            }
         }
-
 
         public void CadastrarPermissao(Permissao permissao)
         {
@@ -67,13 +66,81 @@ namespace Controlador
             try
             {
                 ValidarPermissao(permissao);
-                iDaoPermissao.InsertPermissao(permissao);
+                iDaoPermissao.CadastrarPermissao(permissao);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
+
+        public void AlterarPermissao(Permissao permissao)
+        {
+            try
+            {
+                ValidarPermissao(permissao);
+                iDaoPermissao.UpdatePermissao(permissao);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void DeletarPermissao(int idPermissao)
+        {
+            try
+            {
+                iDaoPermissao.DeletePermissao(idPermissao);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Permissao ConsultarPermissaoPorId(int idPermissao)
+        {
+            try
+            {
+                if (idPermissao.ToString() == "")
+                {
+                    throw new ExceptionGeral("O Código da permissão não pode ser nulo");
+                }
+                return iDaoPermissao.ConsultarPermissaoCodigo(idPermissao);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<Permissao> ConsultarAllPermissaoFiltros(int codigo, string descricao)
+        {
+            try
+            {
+                return iDaoPermissao.ConsultarAllPermissaoFiltros(codigo, descricao);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<Permissao> ListarPermissoes()
+        {
+            try
+            {
+                return iDaoPermissao.ConsultarAllPermissao();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
 
         #endregion
 
