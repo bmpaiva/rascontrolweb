@@ -79,7 +79,7 @@ namespace DAO
             }
         }
 
-        public List<Impedimentos> ConsultarAllImpedimentoFiltros(int id_impedimento, int id_sprint, string descricao)
+        public List<Impedimentos> ConsultarAllImpedimentoFiltros(int id_impedimento,int id_sprint, string descricao)
         {
             GenericaDAO dao = GenericaDAO.getInstancia();
 

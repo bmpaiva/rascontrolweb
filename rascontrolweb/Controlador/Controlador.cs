@@ -8,13 +8,13 @@ using Exceptions;
 using ClassesBasicas;
 
 
+
 namespace Controlador
 {
     public class Controlador
     {
         IDAOPermissao iDaoPermissao;
         IDAOBurnDown iDAOBurnDown;
-
         IDAOPerfilUsuario iDaoPerfilUsuario;
         IDAOTipoAtividade iDaoTipoAtividade;
         IDAOAtividade iDAOAtividade;
@@ -23,14 +23,13 @@ namespace Controlador
         IDAOAvaliacao360 iDaoAvaliacao360;
         IDAOSprint iDAOSprint;
         IDAOImpedimentos iDAOImpedimentos;
-
+     
         public Controlador()
         {
             try
             {
                 iDaoPermissao = new DAOPermissao();
                 iDAOBurnDown = new DAOBurnDown();
-
                 iDaoPerfilUsuario = new DAOPerfilUsuario();
                 iDaoTipoAtividade = new DAOTipoAtividade();
                 iDAOAtividade = new DAOAtividade();
@@ -39,6 +38,7 @@ namespace Controlador
                 iDaoAvaliacao360 = new DAOAvaliacao360();
                 iDAOSprint = new DAOSprint();
                 iDAOImpedimentos = new DAOImpedimentos();
+                
             }
             catch (Exception ex)
             {
@@ -57,9 +57,9 @@ namespace Controlador
             else if (permissao.Observacao == "")
             {
                 throw new ExceptionGeral("A observação da permissão não pode ser nula");
-            }
+            }            
         }
-
+        
         public void CadastrarPermissao(Permissao permissao)
         {
 
@@ -99,7 +99,7 @@ namespace Controlador
                 throw ex;
             }
         }
-
+        
         public Permissao ConsultarPermissaoPorId(int idPermissao)
         {
             try
@@ -107,7 +107,7 @@ namespace Controlador
                 if (idPermissao.ToString() == "")
                 {
                     throw new ExceptionGeral("O Código da permissão não pode ser nulo");
-                }
+                } 
                 return iDaoPermissao.ConsultarPermissaoCodigo(idPermissao);
             }
             catch (Exception ex)
@@ -119,8 +119,8 @@ namespace Controlador
         public List<Permissao> ConsultarAllPermissaoFiltros(int codigo, string descricao)
         {
             try
-            {
-                return iDaoPermissao.ConsultarAllPermissaoFiltros(codigo, descricao);
+            {                
+                return iDaoPermissao.ConsultarAllPermissaoFiltros(codigo,descricao);
             }
             catch (Exception ex)
             {
@@ -203,191 +203,191 @@ namespace Controlador
             }
             return qtdHoras;
         }
-
+            
 
         #endregion
 
         #region PerfilUsuario
         public void ValidarPerfilUsuario(PerfilUsuario perfil)
         {
-            if (perfil.Descricao == "")
-            {
-                throw new ExceptionGeral("A descrição do perfil do usuário não pode ser nula");
-            }
+          if (perfil.Descricao == "")
+          {
+            throw new ExceptionGeral("A descrição do perfil do usuário não pode ser nula");
+          }
         }
 
         public void CadastrarPerfilUsuario(PerfilUsuario perfil)
         {
 
-            try
-            {
-                ValidarPerfilUsuario(perfil);
-                iDaoPerfilUsuario.CadastrarPerfilUsuario(perfil);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            ValidarPerfilUsuario(perfil);
+            iDaoPerfilUsuario.CadastrarPerfilUsuario(perfil);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public void AlterarPerfilUsuario(PerfilUsuario perfil)
         {
-            try
-            {
-                ValidarPerfilUsuario(perfil);
-                iDaoPerfilUsuario.UpdatePerfilUsuario(perfil);
+          try
+          {
+            ValidarPerfilUsuario(perfil);
+            iDaoPerfilUsuario.UpdatePerfilUsuario(perfil);
 
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public void DeletarPerfilUsuario(int idPerfil)
         {
-            try
-            {
-                iDaoPerfilUsuario.DeletePerfilUsuario(idPerfil);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            iDaoPerfilUsuario.DeletePerfilUsuario(idPerfil);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public PerfilUsuario ConsultarPerfilUsuarioPorId(int idPerfil)
         {
-            try
+          try
+          {
+            if (idPerfil.ToString() == "")
             {
-                if (idPerfil.ToString() == "")
-                {
-                    throw new ExceptionGeral("O Código do perfil do usuário não pode ser nulo");
-                }
-                return iDaoPerfilUsuario.ConsultarPerfilUsuarioCodigo(idPerfil);
+              throw new ExceptionGeral("O Código do perfil do usuário não pode ser nulo");
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            return iDaoPerfilUsuario.ConsultarPerfilUsuarioCodigo(idPerfil);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public List<PerfilUsuario> ConsultarAllPerfilUsuarioFiltros(int codigo, string descricao)
         {
-            try
-            {
-                return iDaoPerfilUsuario.ConsultarAllPerfilUsuarioFiltros(codigo, descricao);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            return iDaoPerfilUsuario.ConsultarAllPerfilUsuarioFiltros(codigo, descricao);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public List<PerfilUsuario> ListarPerfilUsuario()
         {
-            try
-            {
-                return iDaoPerfilUsuario.ConsultarAllPerfilUsuario();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            return iDaoPerfilUsuario.ConsultarAllPerfilUsuario();
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
-        #endregion
+      #endregion
 
         #region TipoAtividade
 
         public void ValidarTipoAtividade(TipoAtividade tipoAtividade)
         {
-            if (tipoAtividade.Descricao == "")
-            {
-                throw new ExceptionGeral("A descrição do tipo atividade não pode ser nula");
-            }
+          if (tipoAtividade.Descricao == "")
+          {
+            throw new ExceptionGeral("A descrição do tipo atividade não pode ser nula");
+          }
         }
 
         public void CadastrarTipoAtividade(TipoAtividade tipoAtividade)
         {
 
-            try
-            {
-                ValidarTipoAtividade(tipoAtividade);
-                iDaoTipoAtividade.CadastrarTipoAtividade(tipoAtividade);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            ValidarTipoAtividade(tipoAtividade);
+            iDaoTipoAtividade.CadastrarTipoAtividade(tipoAtividade);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public void AlterarTipoAtividade(TipoAtividade tipoAtividade)
         {
-            try
-            {
-                ValidarTipoAtividade(tipoAtividade);
-                iDaoTipoAtividade.UpdateTipoAtividade(tipoAtividade);
+          try
+          {
+            ValidarTipoAtividade(tipoAtividade);
+            iDaoTipoAtividade.UpdateTipoAtividade(tipoAtividade);
 
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public void DeletarTipoAtividade(int codigo)
         {
-            try
-            {
-                iDaoTipoAtividade.DeleteTipoAtividade(codigo);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            iDaoTipoAtividade.DeleteTipoAtividade(codigo);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public TipoAtividade ConsultarTipoAtividadePorId(int codigo)
         {
-            try
+          try
+          {
+            if (codigo.ToString() == "")
             {
-                if (codigo.ToString() == "")
-                {
-                    throw new ExceptionGeral("O Código do tipo atividade não pode ser nulo");
-                }
-                return iDaoTipoAtividade.ConsultarTipoAtividadeCodigo(codigo);
+              throw new ExceptionGeral("O Código do tipo atividade não pode ser nulo");
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            return iDaoTipoAtividade.ConsultarTipoAtividadeCodigo(codigo);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public List<TipoAtividade> ConsultarAllTipoAtividadeFiltros(int codigo, string descricao)
         {
-            try
-            {
-                return iDaoTipoAtividade.ConsultarAllTipoAtividadeFiltros(codigo, descricao);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            return iDaoTipoAtividade.ConsultarAllTipoAtividadeFiltros(codigo, descricao);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public List<TipoAtividade> ListarTipoAtividade()
         {
-            try
-            {
-                return iDaoTipoAtividade.ConsultarAllTipoAtividade();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            return iDaoTipoAtividade.ConsultarAllTipoAtividade();
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
-        #endregion
+      #endregion
 
         #region Atividade
 
@@ -476,7 +476,7 @@ namespace Controlador
         {
             try
             {
-                return iDAOAtividade.ConsultarAllAtividadeFiltros(id_atividade, descricao);
+                return iDAOAtividade.ConsultarAllAtividadeFiltros(id_atividade,  descricao);
             }
             catch (Exception ex)
             {
@@ -503,278 +503,278 @@ namespace Controlador
 
         public void ValidarEstoria(Estoria e)
         {
-            if (e.Descricao == "")
-            {
-                throw new ExceptionGeral("A descrição da estoria não pode ser nula");
-            }
+          if (e.Descricao == "")
+          {
+            throw new ExceptionGeral("A descrição da estoria não pode ser nula");
+          }
         }
 
         public void CadastrarEstoria(Estoria e)
         {
 
-            try
-            {
-                ValidarEstoria(e);
-                iDaoEstoria.CadastrarEstoria(e);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            ValidarEstoria(e);
+            iDaoEstoria.CadastrarEstoria(e);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public void AlterarEstoria(Estoria e)
         {
-            try
-            {
-                ValidarEstoria(e);
-                iDaoEstoria.UpdateEstoria(e);
+          try
+          {
+            ValidarEstoria(e);
+            iDaoEstoria.UpdateEstoria(e);
 
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public void DeletarEstoria(int idEstoria)
         {
-            try
-            {
-                iDaoEstoria.DeleteEstoria(idEstoria);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            iDaoEstoria.DeleteEstoria(idEstoria);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public Estoria ConsultarEstoriaPorId(int idEstoria)
         {
-            try
+          try
+          {
+            if (idEstoria.ToString() == "")
             {
-                if (idEstoria.ToString() == "")
-                {
-                    throw new ExceptionGeral("O Código da estoria não pode ser nulo");
-                }
-                return iDaoEstoria.ConsultarEstoriaCodigo(idEstoria);
+              throw new ExceptionGeral("O Código da estoria não pode ser nulo");
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            return iDaoEstoria.ConsultarEstoriaCodigo(idEstoria);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public List<Estoria> ConsultarAllEstoriaFiltros(int codigo, string descricao)
         {
-            try
-            {
-                return iDaoEstoria.ConsultarAllEstoriaFiltros(codigo, descricao);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            return iDaoEstoria.ConsultarAllEstoriaFiltros(codigo, descricao);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public List<Estoria> ListarEstoria()
         {
-            try
-            {
-                return iDaoEstoria.ConsultarAllEstoria();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            return iDaoEstoria.ConsultarAllEstoria();
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
-        #endregion
+      #endregion
 
         #region Projeto
 
         public void ValidarProjeto(Projeto p)
         {
-            if (p.Descricao == "")
-            {
-                throw new ExceptionGeral("A descrição do projeto não pode ser nula");
-            }
+          if (p.Descricao == "")
+          {
+            throw new ExceptionGeral("A descrição do projeto não pode ser nula");
+          }
         }
 
         public void CadastrarProjeto(Projeto p)
         {
 
-            try
-            {
-                ValidarProjeto(p);
-                iDaoProjeto.CadastrarProjeto(p);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            ValidarProjeto(p);
+            iDaoProjeto.CadastrarProjeto(p);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public void AlterarProjeto(Projeto p)
         {
-            try
-            {
-                ValidarProjeto(p);
-                iDaoProjeto.UpdateProjeto(p);
+          try
+          {
+            ValidarProjeto(p);
+            iDaoProjeto.UpdateProjeto(p);
 
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public void DeletarProjeto(int idProjeto)
         {
-            try
-            {
-                iDaoProjeto.DeleteProjeto(idProjeto);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            iDaoProjeto.DeleteProjeto(idProjeto);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public Projeto ConsultarProjetoPorId(int idProjeto)
         {
-            try
+          try
+          {
+            if (idProjeto.ToString() == "")
             {
-                if (idProjeto.ToString() == "")
-                {
-                    throw new ExceptionGeral("O Código do projeto não pode ser nulo");
-                }
-                return iDaoProjeto.ConsultarProjetoCodigo(idProjeto);
+              throw new ExceptionGeral("O Código do projeto não pode ser nulo");
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            return iDaoProjeto.ConsultarProjetoCodigo(idProjeto);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public List<Projeto> ConsultarAllProjetoFiltros(int codigo, string descricao)
         {
-            try
-            {
-                return iDaoProjeto.ConsultarAllProjetoFiltros(codigo, descricao);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            return iDaoProjeto.ConsultarAllProjetoFiltros(codigo, descricao);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public List<Projeto> ListarProjeto()
         {
-            try
-            {
-                return iDaoProjeto.ConsultarAllProjeto();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            return iDaoProjeto.ConsultarAllProjeto();
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
-        #endregion
+      #endregion
 
         #region Avaliacao360
 
         public void ValidarAvaliacao360(Avaliacao360 av)
         {
-            if (av.Justificativa == "")
-            {
-                throw new ExceptionGeral("A justificativa da avaliação não pode ser nula");
-            }
+          if (av.Justificativa == "")
+          {
+            throw new ExceptionGeral("A justificativa da avaliação não pode ser nula");
+          }
         }
 
         public void CadastrarAvaliacao360(Avaliacao360 av)
         {
 
-            try
-            {
-                ValidarAvaliacao360(av);
-                iDaoAvaliacao360.CadastrarAvaliacao360(av);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            ValidarAvaliacao360(av);
+            iDaoAvaliacao360.CadastrarAvaliacao360(av);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public void AlterarAvaliacao360(Avaliacao360 av)
         {
-            try
-            {
-                ValidarAvaliacao360(av);
-                iDaoAvaliacao360.UpdateAvaliacao360(av);
+          try
+          {
+            ValidarAvaliacao360(av);
+            iDaoAvaliacao360.UpdateAvaliacao360(av);
 
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public void DeletarAvaliacao360(int idAvaliacao360)
         {
-            try
-            {
-                iDaoAvaliacao360.DeleteAvaliacao360(idAvaliacao360);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            iDaoAvaliacao360.DeleteAvaliacao360(idAvaliacao360);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public Avaliacao360 ConsultarAvaliacao360PorId(int idAvaliacao)
         {
-            try
+          try
+          {
+            if (idAvaliacao.ToString() == "")
             {
-                if (idAvaliacao.ToString() == "")
-                {
-                    throw new ExceptionGeral("O Código da Avaliação não pode ser nulo");
-                }
-
-                return iDaoAvaliacao360.ConsultarAvaliacao360Codigo(idAvaliacao);
+              throw new ExceptionGeral("O Código da Avaliação não pode ser nulo");
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            
+            return iDaoAvaliacao360.ConsultarAvaliacao360Codigo(idAvaliacao);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public List<Avaliacao360> ConsultarAllAvaliacao360Filtros(int codigo, string justificativa)
         {
-            try
-            {
-                return iDaoAvaliacao360.ConsultarAllAvaliacao360Filtros(codigo, justificativa);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            return iDaoAvaliacao360.ConsultarAllAvaliacao360Filtros(codigo, justificativa);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public List<Avaliacao360> ListarAvaliacao360()
         {
-            try
-            {
-                return iDaoAvaliacao360.ConsultarAllAvaliacao360();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            return iDaoAvaliacao360.ConsultarAllAvaliacao360();
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
-        #endregion
+      #endregion
 
         #region Sprint
 
@@ -953,7 +953,7 @@ namespace Controlador
             }
         }
 
-        public List<Impedimentos> ConsultarAllImpedimentoFiltros(int id_impedimento, int id_sprint, string descricao)
+        public List<Impedimentos> ConsultarAllImpedimentoFiltros(int id_impedimento,int id_sprint, string descricao)
         {
             try
             {

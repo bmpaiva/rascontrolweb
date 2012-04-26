@@ -7,13 +7,13 @@ using ClassesBasicas;
 
 namespace IDAO
 {
-    public interface IDAOPerfilUsuario
-    {
-        List<PerfilUsuario> ConsultarAllPerfilUsuario();
-        PerfilUsuario ConsultarPerfilUsuarioCodigo(int codigo);
-        List<PerfilUsuario> ConsultarAllPerfilUsuarioFiltros(int codigo, string descricao);
-        void CadastrarPerfilUsuario(PerfilUsuario perfilUsuario);
-        void UpdatePerfilUsuario(PerfilUsuario perfilUsuario);
-        void DeletePerfilUsuario(int id);
-    }
+  public interface IDAOPerfilUsuario
+  {
+    List<PerfilUsuario> ConsultarAllPerfilUsuario();
+    PerfilUsuario ConsultarPerfilUsuarioCodigo(int codigo);
+    List<PerfilUsuario> ConsultarAllPerfilUsuarioFiltros(int codigo, string descricao);
+    void CadastrarPerfilUsuario(PerfilUsuario perfilUsuario);
+    void UpdatePerfilUsuario(PerfilUsuario perfilUsuario);
+    void DeletePerfilUsuario(int id);     
+  }
 }

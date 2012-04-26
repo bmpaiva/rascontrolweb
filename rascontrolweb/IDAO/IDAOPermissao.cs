@@ -8,11 +8,11 @@ namespace IDAO
 {
     public interface IDAOPermissao
     {
-        List<Permissao> ConsultarAllPermissao();
+        List<Permissao> ConsultarAllPermissao();     
         Permissao ConsultarPermissaoCodigo(int codigo);
         List<Permissao> ConsultarAllPermissaoFiltros(int codigo, string descricao);
         void CadastrarPermissao(Permissao permissao);
-        void UpdatePermissao(Permissao permissao);
-        void DeletePermissao(int id);
+        void UpdatePermissao(Permissao permissao);       
+        void DeletePermissao(int id);     
     }
 }

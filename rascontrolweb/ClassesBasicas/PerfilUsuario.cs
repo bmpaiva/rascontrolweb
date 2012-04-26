@@ -5,43 +5,43 @@ using System.Web;
 
 namespace ClassesBasicas
 {
-    public class PerfilUsuario
+  public class PerfilUsuario
+  {
+    private int codigo;
+    private string descricao;
+    private string erro;
+
+    public int Codigo
     {
-        private int codigo;
-        private string descricao;
-        private string erro;
-
-        public int Codigo
-        {
-            get { return codigo; }
-            set { codigo = value; }
-        }
-
-
-        public string Descricao
-        {
-            get { return descricao; }
-            set { descricao = value; }
-        }
-
-
-        public string Erro
-        {
-            get { return erro; }
-            set { erro = value; }
-        }
-
-        public PerfilUsuario()
-        {
-
-        }
-
-        public PerfilUsuario(int codigo, string descricao, string erro)
-        {
-            this.Codigo = codigo;
-            this.Descricao = descricao;
-            this.Erro = erro;
-        }
-
+      get { return codigo; }
+      set { codigo = value; }
     }
+   
+
+    public string Descricao
+    {
+      get { return descricao; }
+      set { descricao = value; }
+    }
+   
+
+    public string Erro
+    {
+      get { return erro; }
+      set { erro = value; }
+    }
+
+    public PerfilUsuario() 
+    {
+    
+    }
+
+    public PerfilUsuario(int codigo, string descricao, string erro) 
+    {
+      this.Codigo = codigo;
+      this.Descricao = descricao;
+      this.Erro = erro;
+    }
+
+  }
 }

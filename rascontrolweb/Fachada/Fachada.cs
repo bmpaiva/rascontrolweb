@@ -30,12 +30,83 @@ namespace Fachada
             }
         }
 
-
         #region Permissao
+
         public void CadastrarPermissao(Permissao permissao)
         {
-            controlador.CadastrarPermissao(permissao);
+            try
+            {
+                controlador.CadastrarPermissao(permissao);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }            
+        }       
+
+        public void AlterarPermissao(Permissao permissao)
+        {
+            try
+            {
+                controlador.AlterarPermissao(permissao);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
+
+        public void DeletarPermissao(int idPermissao)
+        {
+            try
+            {
+                controlador.DeletarPermissao(idPermissao);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Permissao ConsultarPermissaoPorId(int idPermissao)
+        {
+            try
+            {
+
+                return controlador.ConsultarPermissaoPorId(idPermissao);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<Permissao> ConsultarAllPermissaoFiltros(int codigo, string descricao)
+        {
+            try
+            {
+                return controlador.ConsultarAllPermissaoFiltros(codigo,descricao);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<Permissao> ListarPermissoes()
+        {
+            try
+            {
+                return controlador.ListarPermissoes();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         #endregion
 
         #region BurnDown
@@ -57,159 +128,159 @@ namespace Fachada
 
         #endregion
 
-        #region PerfilUsuario
+      #region PerfilUsuario
         public void CadastrarPerfilUsuario(PerfilUsuario perfil)
         {
-            try
-            {
-                controlador.CadastrarPerfilUsuario(perfil);
+          try
+          {
+            controlador.CadastrarPerfilUsuario(perfil);
 
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public void AlterarPerfilUsuario(PerfilUsuario perfil)
         {
-            try
-            {
-                controlador.AlterarPerfilUsuario(perfil);
+          try
+          {
+            controlador.AlterarPerfilUsuario(perfil);
 
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public void DeletarPerfilUsuario(int idPerfil)
         {
-            try
-            {
-                controlador.DeletarPerfilUsuario(idPerfil);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            controlador.DeletarPerfilUsuario(idPerfil);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public PerfilUsuario ConsultarPerfilUsuarioPorId(int idPerfil)
         {
-            try
-            {
+          try
+          {
 
-                return controlador.ConsultarPerfilUsuarioPorId(idPerfil);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            return controlador.ConsultarPerfilUsuarioPorId(idPerfil);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public List<PerfilUsuario> ConsultarAllPerfilUsuarioFiltros(int codigo, string descricao)
         {
-            try
-            {
-                return controlador.ConsultarAllPerfilUsuarioFiltros(codigo, descricao);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            return controlador.ConsultarAllPerfilUsuarioFiltros(codigo, descricao);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public List<PerfilUsuario> ListarPerfilUsuario()
         {
-            try
-            {
-                return controlador.ListarPerfilUsuario();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            return controlador.ListarPerfilUsuario();
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
-        #endregion
+      #endregion
 
-        #region TipoAtividade
+      #region TipoAtividade
         public void CadastrarTipoAtividade(TipoAtividade tipoAtividade)
         {
-            try
-            {
-                controlador.CadastrarTipoAtividade(tipoAtividade);
+          try
+          {
+            controlador.CadastrarTipoAtividade(tipoAtividade);
 
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public void AlterarTipoAtividade(TipoAtividade tipoAtividade)
         {
-            try
-            {
-                controlador.AlterarTipoAtividade(tipoAtividade);
+          try
+          {
+            controlador.AlterarTipoAtividade(tipoAtividade);
 
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public void DeletarTipoAtividade(int codigo)
         {
-            try
-            {
-                controlador.DeletarTipoAtividade(codigo);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            controlador.DeletarTipoAtividade(codigo);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public TipoAtividade ConsultarTipoAtividadePorId(int codigo)
         {
-            try
-            {
+          try
+          {
 
-                return controlador.ConsultarTipoAtividadePorId(codigo);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            return controlador.ConsultarTipoAtividadePorId(codigo);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public List<TipoAtividade> ConsultarAllTipoAtividadeFiltros(int codigo, string descricao)
         {
-            try
-            {
-                return controlador.ConsultarAllTipoAtividadeFiltros(codigo, descricao);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            return controlador.ConsultarAllTipoAtividadeFiltros(codigo, descricao);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public List<TipoAtividade> ListarTipoAtividade()
         {
-            try
-            {
-                return controlador.ListarTipoAtividade();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            return controlador.ListarTipoAtividade();
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
-        #endregion
+      #endregion
 
         #region Atividade
 
@@ -268,7 +339,7 @@ namespace Fachada
         {
             try
             {
-                return controlador.ConsultarAllAtividadeFiltros(id_atividade, descricao);
+                return controlador.ConsultarAllAtividadeFiltros(id_atividade,  descricao);
             }
             catch (Exception ex)
             {
@@ -290,244 +361,244 @@ namespace Fachada
 
         #endregion
 
-        #region Estoria
+      #region Estoria
 
         public void CadastrarEstoria(Estoria e)
         {
-            try
-            {
-                controlador.CadastrarEstoria(e);
+          try
+          {
+            controlador.CadastrarEstoria(e);
 
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public void AlterarEstoria(Estoria e)
         {
-            try
-            {
-                controlador.AlterarEstoria(e);
+          try
+          {
+            controlador.AlterarEstoria(e);
 
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public void DeletarEstoria(int idEstoria)
         {
-            try
-            {
-                controlador.DeletarEstoria(idEstoria);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            controlador.DeletarEstoria(idEstoria);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public Estoria ConsultarEstoriaPorId(int idEstoria)
         {
-            try
-            {
+          try
+          {
 
-                return controlador.ConsultarEstoriaPorId(idEstoria);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            return controlador.ConsultarEstoriaPorId(idEstoria);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public List<Estoria> ConsultarAllEstoriaFiltros(int codigo, string descricao)
         {
-            try
-            {
-                return controlador.ConsultarAllEstoriaFiltros(codigo, descricao);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            return controlador.ConsultarAllEstoriaFiltros(codigo, descricao);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public List<Estoria> ListarEstoria()
         {
-            try
-            {
-                return controlador.ListarEstoria();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            return controlador.ListarEstoria();
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
-        #endregion
+      #endregion
 
-        #region Projeto
+      #region Projeto
 
         public void CadastrarProjeto(Projeto p)
         {
-            try
-            {
-                controlador.CadastrarProjeto(p);
+          try
+          {
+            controlador.CadastrarProjeto(p);
 
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public void AlterarProjeto(Projeto p)
         {
-            try
-            {
-                controlador.AlterarProjeto(p);
+          try
+          {
+            controlador.AlterarProjeto(p);
 
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public void DeletarProjeto(int idProjeto)
         {
-            try
-            {
-                controlador.DeletarProjeto(idProjeto);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            controlador.DeletarProjeto(idProjeto);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public Projeto ConsultarProjetoPorId(int idProjeto)
         {
-            try
-            {
+          try
+          {
 
-                return controlador.ConsultarProjetoPorId(idProjeto);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            return controlador.ConsultarProjetoPorId(idProjeto);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public List<Projeto> ConsultarAllProjetoFiltros(int codigo, string descricao)
         {
-            try
-            {
-                return controlador.ConsultarAllProjetoFiltros(codigo, descricao);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            return controlador.ConsultarAllProjetoFiltros(codigo, descricao);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public List<Projeto> ListarProjeto()
         {
-            try
-            {
-                return controlador.ListarProjeto();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            return controlador.ListarProjeto();
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
-        #endregion
+      #endregion
 
-        #region Avaliacao360
+      #region Avaliacao360
 
         public void CadastrarAvaliacao360(Avaliacao360 av)
         {
-            try
-            {
-                controlador.CadastrarAvaliacao360(av);
+          try
+          {
+            controlador.CadastrarAvaliacao360(av);
 
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public void AlterarAvaliacao360(Avaliacao360 av)
         {
-            try
-            {
-                controlador.AlterarAvaliacao360(av);
+          try
+          {
+            controlador.AlterarAvaliacao360(av);
 
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public void DeletarAvaliacao360(int idAvaliacao360)
         {
-            try
-            {
-                controlador.DeletarAvaliacao360(idAvaliacao360);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            controlador.DeletarAvaliacao360(idAvaliacao360);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public Avaliacao360 ConsultarAvaliacao360PorId(int idAvaliacao)
         {
-            try
-            {
+          try
+          {
 
-                return controlador.ConsultarAvaliacao360PorId(idAvaliacao);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            return controlador.ConsultarAvaliacao360PorId(idAvaliacao);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public List<Avaliacao360> ConsultarAllAvaliacao360Filtros(int codigo, string justificativa)
         {
-            try
-            {
-                return controlador.ConsultarAllAvaliacao360Filtros(codigo, justificativa);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            return controlador.ConsultarAllAvaliacao360Filtros(codigo, justificativa);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
         public List<Avaliacao360> ListarAvaliacao360()
         {
-            try
-            {
-                return controlador.ListarAvaliacao360();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+          try
+          {
+            return controlador.ListarAvaliacao360();
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
         }
 
-        #endregion
+      #endregion
 
-        #region Sprint
+      #region Sprint
 
         public void CadastrarSprint(Sprint sprint)
         {
@@ -606,7 +677,7 @@ namespace Fachada
 
         #endregion
 
-        #region Impedimento
+      #region Impedimento
 
         public void CadastrarImpedimento(Impedimentos impedimentos)
         {
@@ -659,7 +730,7 @@ namespace Fachada
             }
         }
 
-        public List<Impedimentos> ConsultarAllImpedimentoFiltros(int id_impedimento, int id_sprint, string descricao)
+        public List<Impedimentos> ConsultarAllImpedimentoFiltros(int id_impedimento,int id_sprint, string descricao)
         {
             try
             {
@@ -684,7 +755,6 @@ namespace Fachada
         }
 
         #endregion
-
 
     }
 }

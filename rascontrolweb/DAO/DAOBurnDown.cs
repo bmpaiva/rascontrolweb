@@ -82,7 +82,14 @@ namespace DAO
 
                 dr.Read();
 
-                qtdHoraRealizada = (double)dr["DURACAO_ESTIMADA"];
+                try
+                {
+                    qtdHoraRealizada = (double)dr["DURACAO_ESTIMADA"];
+                }
+                catch
+                {
+                    qtdHoraRealizada = 0;
+                }
 
                 dr.Close();
 
