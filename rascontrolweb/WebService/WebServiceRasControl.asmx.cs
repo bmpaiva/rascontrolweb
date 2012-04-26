@@ -373,8 +373,7 @@ namespace WebService
 
         #endregion
 
-
-      #region PerfilUsuario
+        #region PerfilUsuario
 
         [WebMethod]
         public void CadastrarPerfilUsuario(PerfilUsuario perfilUsuario)
@@ -712,7 +711,6 @@ namespace WebService
         }
         #endregion
 
-
         #region TipoAtividade
 
         [WebMethod]
@@ -795,6 +793,91 @@ namespace WebService
                 throw ex;
             }
         }
+        #endregion
+
+        #region Avaliacao360
+
+        [WebMethod]
+        public void CadastrarAvaliacao360(Avaliacao360 avaliacao)
+        {
+            try
+            {
+                Fachada.Fachada.Instancia.CadastrarAvaliacao360(avaliacao);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [WebMethod]
+        public void AlterarAvaliacao360(Avaliacao360 avaliacao)
+        {
+            try
+            {
+                Fachada.Fachada.Instancia.AlterarAvaliacao360(avaliacao);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [WebMethod]
+        public void DeletarAvaliacao360(int id)
+        {
+            try
+            {
+                Fachada.Fachada.Instancia.DeletarAvaliacao360(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [WebMethod]
+        public Avaliacao360 ConsultarAvaliacao360PorId(int id)
+        {
+            try
+            {
+
+                return Fachada.Fachada.Instancia.ConsultarAvaliacao360PorId(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [WebMethod]
+        public List<Avaliacao360> ConsultarAllAvaliacao360Filtros(int codigo, string justificativa)
+        {
+            try
+            {
+                return Fachada.Fachada.Instancia.ConsultarAllAvaliacao360Filtros(codigo, justificativa);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [WebMethod]
+        public List<Avaliacao360> ListarAvaliacao()
+        {
+            try
+            {
+                return Fachada.Fachada.Instancia.ListarAvaliacao360();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         #endregion
 
 
