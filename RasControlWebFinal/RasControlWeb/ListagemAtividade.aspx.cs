@@ -17,29 +17,29 @@ namespace RasControlWeb
 
         private void BindGrid() 
         {
-            int id_atividade;
-           // int id_tipo_atividade;
-           // int id_estoria_sprint;
-            string descricao = null;
-           // double duracao_estimada;
-            //double duracao_realizada;
+           int id_atividade;
+           //int id_tipo_atividade;
+           //int id_estoria_sprint;
+           string descricao = null;
+           //double duracao_estimada;
+           //double duracao_realizada;
 
             try
             {
                 id_atividade = int.Parse(tbCodigoAtividade.Text);
-           //     id_tipo_atividade = int.Parse(tbCodigoTipoAtividade.Text);
-           //     id_estoria_sprint = int.Parse(tbCodigoEstoriaSprint.Text);
-            //    duracao_estimada = double.Parse(tbDuracaoEstimada.Text);
-            //    duracao_realizada = double.Parse(tbDuracaoRealizada.Text);
+                //id_tipo_atividade = int.Parse(tbCodigoTipoAtividade.Text);
+                //id_estoria_sprint = int.Parse(tbCodigoEstoriaSprint.Text);
+                //duracao_estimada = double.Parse(tbDuracaoEstimada.Text);
+                //duracao_realizada = double.Parse(tbDuracaoRealizada.Text);
                 
             }
             catch (Exception ex) 
             {
-                id_atividade = -1;
-            //    id_tipo_atividade = -1;
-            //    id_estoria_sprint = -1;
-            //    duracao_estimada = -1;
-            //    duracao_realizada = -1;
+               id_atividade = -1;
+               //id_tipo_atividade = -1;
+               //id_estoria_sprint = -1;
+               //duracao_estimada = -1;
+               //duracao_realizada = -1;
          
             }
 
