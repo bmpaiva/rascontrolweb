@@ -1,0 +1,15 @@
+C:\Users\Edilson Júnior\Desktop\Edilson\RasControl\ClassesBasicas\bin\ClassesBasicas.dll
+C:\Users\Edilson Júnior\Desktop\Edilson\RasControl\ClassesBasicas\bin\ClassesBasicas.pdb
+C:\Users\Edilson Júnior\Desktop\Edilson\RasControl\ClassesBasicas\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Edilson Júnior\Desktop\Edilson\RasControl\ClassesBasicas\obj\Debug\ClassesBasicas.dll
+C:\Users\Edilson Júnior\Desktop\Edilson\RasControl\ClassesBasicas\obj\Debug\ClassesBasicas.pdb
+C:\Users\Usuário\Documents\Visual Studio 2010\Projects\RasControl\ClassesBasicas\bin\ClassesBasicas.dll
+C:\Users\Usuário\Documents\Visual Studio 2010\Projects\RasControl\ClassesBasicas\bin\ClassesBasicas.pdb
+C:\Users\Usuário\Documents\Visual Studio 2010\Projects\RasControl\ClassesBasicas\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Usuário\Documents\Visual Studio 2010\Projects\RasControl\ClassesBasicas\obj\Debug\ClassesBasicas.dll
+C:\Users\Usuário\Documents\Visual Studio 2010\Projects\RasControl\ClassesBasicas\obj\Debug\ClassesBasicas.pdb
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\RasControl\ClassesBasicas\bin\ClassesBasicas.dll
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\RasControl\ClassesBasicas\bin\ClassesBasicas.pdb
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\RasControl\ClassesBasicas\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\RasControl\ClassesBasicas\obj\Debug\ClassesBasicas.dll
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\RasControl\ClassesBasicas\obj\Debug\ClassesBasicas.pdb
