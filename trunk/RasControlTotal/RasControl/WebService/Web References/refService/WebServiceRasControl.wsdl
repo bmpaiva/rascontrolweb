@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="XmlBurnDown">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idProjeto" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idSprint" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XmlBurnDownResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XmlBurnDownResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XmlDesempenhoMembrosProjeto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idProjeto" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XmlDesempenhoMembrosProjetoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XmlDesempenhoMembrosProjetoResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XmlBurnUp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idProjeto" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idSprint" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XmlBurnUpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XmlBurnUpResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CadastrarPermissao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="permissao" type="tns:Permissao" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Permissao">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Codigo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descricao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Observacao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Erro" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CadastrarPermissaoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AlterarPermissao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="permissao" type="tns:Permissao" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlterarPermissaoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeletarPermissao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPermissao" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeletarPermissaoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ConsultarPermissaoPorId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPermissao" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarPermissaoPorIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarPermissaoPorIdResult" type="tns:Permissao" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarAllPermissaoFiltros">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="descricao" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarAllPermissaoFiltrosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarAllPermissaoFiltrosResult" type="tns:ArrayOfPermissao" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPermissao">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Permissao" nillable="true" type="tns:Permissao" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ListarPermissoes">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListarPermissoesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarPermissoesResult" type="tns:ArrayOfPermissao" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="XmlBurnDownSoapIn">
+    <wsdl:part name="parameters" element="tns:XmlBurnDown" />
+  </wsdl:message>
+  <wsdl:message name="XmlBurnDownSoapOut">
+    <wsdl:part name="parameters" element="tns:XmlBurnDownResponse" />
+  </wsdl:message>
+  <wsdl:message name="XmlDesempenhoMembrosProjetoSoapIn">
+    <wsdl:part name="parameters" element="tns:XmlDesempenhoMembrosProjeto" />
+  </wsdl:message>
+  <wsdl:message name="XmlDesempenhoMembrosProjetoSoapOut">
+    <wsdl:part name="parameters" element="tns:XmlDesempenhoMembrosProjetoResponse" />
+  </wsdl:message>
+  <wsdl:message name="XmlBurnUpSoapIn">
+    <wsdl:part name="parameters" element="tns:XmlBurnUp" />
+  </wsdl:message>
+  <wsdl:message name="XmlBurnUpSoapOut">
+    <wsdl:part name="parameters" element="tns:XmlBurnUpResponse" />
+  </wsdl:message>
+  <wsdl:message name="CadastrarPermissaoSoapIn">
+    <wsdl:part name="parameters" element="tns:CadastrarPermissao" />
+  </wsdl:message>
+  <wsdl:message name="CadastrarPermissaoSoapOut">
+    <wsdl:part name="parameters" element="tns:CadastrarPermissaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlterarPermissaoSoapIn">
+    <wsdl:part name="parameters" element="tns:AlterarPermissao" />
+  </wsdl:message>
+  <wsdl:message name="AlterarPermissaoSoapOut">
+    <wsdl:part name="parameters" element="tns:AlterarPermissaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeletarPermissaoSoapIn">
+    <wsdl:part name="parameters" element="tns:DeletarPermissao" />
+  </wsdl:message>
+  <wsdl:message name="DeletarPermissaoSoapOut">
+    <wsdl:part name="parameters" element="tns:DeletarPermissaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPermissaoPorIdSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarPermissaoPorId" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPermissaoPorIdSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarPermissaoPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarAllPermissaoFiltrosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarAllPermissaoFiltros" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarAllPermissaoFiltrosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarAllPermissaoFiltrosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarPermissoesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarPermissoes" />
+  </wsdl:message>
+  <wsdl:message name="ListarPermissoesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarPermissoesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceRasControlSoap">
+    <wsdl:operation name="XmlBurnDown">
+      <wsdl:input message="tns:XmlBurnDownSoapIn" />
+      <wsdl:output message="tns:XmlBurnDownSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="XmlDesempenhoMembrosProjeto">
+      <wsdl:input message="tns:XmlDesempenhoMembrosProjetoSoapIn" />
+      <wsdl:output message="tns:XmlDesempenhoMembrosProjetoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="XmlBurnUp">
+      <wsdl:input message="tns:XmlBurnUpSoapIn" />
+      <wsdl:output message="tns:XmlBurnUpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarPermissao">
+      <wsdl:input message="tns:CadastrarPermissaoSoapIn" />
+      <wsdl:output message="tns:CadastrarPermissaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarPermissao">
+      <wsdl:input message="tns:AlterarPermissaoSoapIn" />
+      <wsdl:output message="tns:AlterarPermissaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletarPermissao">
+      <wsdl:input message="tns:DeletarPermissaoSoapIn" />
+      <wsdl:output message="tns:DeletarPermissaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPermissaoPorId">
+      <wsdl:input message="tns:ConsultarPermissaoPorIdSoapIn" />
+      <wsdl:output message="tns:ConsultarPermissaoPorIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarAllPermissaoFiltros">
+      <wsdl:input message="tns:ConsultarAllPermissaoFiltrosSoapIn" />
+      <wsdl:output message="tns:ConsultarAllPermissaoFiltrosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarPermissoes">
+      <wsdl:input message="tns:ListarPermissoesSoapIn" />
+      <wsdl:output message="tns:ListarPermissoesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceRasControlSoap" type="tns:WebServiceRasControlSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="XmlBurnDown">
+      <soap:operation soapAction="http://tempuri.org/XmlBurnDown" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XmlDesempenhoMembrosProjeto">
+      <soap:operation soapAction="http://tempuri.org/XmlDesempenhoMembrosProjeto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XmlBurnUp">
+      <soap:operation soapAction="http://tempuri.org/XmlBurnUp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarPermissao">
+      <soap:operation soapAction="http://tempuri.org/CadastrarPermissao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarPermissao">
+      <soap:operation soapAction="http://tempuri.org/AlterarPermissao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletarPermissao">
+      <soap:operation soapAction="http://tempuri.org/DeletarPermissao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPermissaoPorId">
+      <soap:operation soapAction="http://tempuri.org/ConsultarPermissaoPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarAllPermissaoFiltros">
+      <soap:operation soapAction="http://tempuri.org/ConsultarAllPermissaoFiltros" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPermissoes">
+      <soap:operation soapAction="http://tempuri.org/ListarPermissoes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceRasControlSoap12" type="tns:WebServiceRasControlSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="XmlBurnDown">
+      <soap12:operation soapAction="http://tempuri.org/XmlBurnDown" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XmlDesempenhoMembrosProjeto">
+      <soap12:operation soapAction="http://tempuri.org/XmlDesempenhoMembrosProjeto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XmlBurnUp">
+      <soap12:operation soapAction="http://tempuri.org/XmlBurnUp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarPermissao">
+      <soap12:operation soapAction="http://tempuri.org/CadastrarPermissao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarPermissao">
+      <soap12:operation soapAction="http://tempuri.org/AlterarPermissao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletarPermissao">
+      <soap12:operation soapAction="http://tempuri.org/DeletarPermissao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPermissaoPorId">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarPermissaoPorId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarAllPermissaoFiltros">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarAllPermissaoFiltros" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPermissoes">
+      <soap12:operation soapAction="http://tempuri.org/ListarPermissoes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceRasControl">
+    <wsdl:port name="WebServiceRasControlSoap" binding="tns:WebServiceRasControlSoap">
+      <soap:address location="http://localhost:8571/WebServiceRasControl.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceRasControlSoap12" binding="tns:WebServiceRasControlSoap12">
+      <soap12:address location="http://localhost:8571/WebServiceRasControl.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
