@@ -6,12 +6,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C9BA57E7-3416-4EBB-BEF5-3F8745625418}</ProjectGuid>
+    <ProjectGuid>{A659162B-CAF6-4D66-81B6-1E6C91A9086A}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ClassesBasicas</RootNamespace>
-    <AssemblyName>ClassesBasicas</AssemblyName>
+    <RootNamespace>IDAO</RootNamespace>
+    <AssemblyName>IDAO</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <SccProjectName>Svn</SccProjectName>
     <SccLocalPath>Svn</SccLocalPath>
@@ -54,25 +54,35 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Atividade.cs" />
-    <Compile Include="Estoria.cs" />
-    <Compile Include="Impedimentos.cs" />
-    <Compile Include="PerfilUsuario.cs" />
-    <Compile Include="Permissao.cs" />
-    <Compile Include="Projeto.cs" />
+    <Compile Include="IDAOAtividade.cs" />
+    <Compile Include="IDAOBurnDown.cs" />
+    <Compile Include="IDAOEstoria.cs" />
+    <Compile Include="IDAOImpedimentos.cs" />
+    <Compile Include="IDAOPerfilUsuario.cs" />
+    <Compile Include="IDAOPermissao.cs" />
+    <Compile Include="IDAOProjeto.cs" />
+    <Compile Include="IDAOSprint.cs" />
+    <Compile Include="IDAOUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sprint.cs" />
-    <Compile Include="Usuario.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassesBasicas\ClassesBasicas.csproj">
+      <Project>{C9BA57E7-3416-4EBB-BEF5-3F8745625418}</Project>
+      <Name>ClassesBasicas</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\ClassesBasicas.dll" />
     <Content Include="bin\ClassesBasicas.pdb" />
-    <Content Include="obj\Debug\ClassesBasicas.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\ClassesBasicas.dll" />
-    <Content Include="obj\Debug\ClassesBasicas.pdb" />
+    <Content Include="bin\IDAO.dll" />
+    <Content Include="bin\IDAO.pdb" />
+    <Content Include="obj\Debug\IDAO.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\IDAO.dll" />
+    <Content Include="obj\Debug\IDAO.pdb" />
   </ItemGroup>
   <ItemGroup>
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\ResolveAssemblyReference.cache" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\Debug\TempPE\" />
@@ -85,7 +95,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>8003</DevelopmentServerPort>
+          <DevelopmentServerPort>8280</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

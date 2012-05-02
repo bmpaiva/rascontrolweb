@@ -1,0 +1,51 @@
+C:\Users\Edilson Júnior\Desktop\Edilson\RasControl\Fachada\bin\Fachada.dll
+C:\Users\Edilson Júnior\Desktop\Edilson\RasControl\Fachada\bin\Fachada.pdb
+C:\Users\Edilson Júnior\Desktop\Edilson\RasControl\Fachada\bin\ClassesBasicas.dll
+C:\Users\Edilson Júnior\Desktop\Edilson\RasControl\Fachada\bin\Controlador.dll
+C:\Users\Edilson Júnior\Desktop\Edilson\RasControl\Fachada\bin\IDAO.dll
+C:\Users\Edilson Júnior\Desktop\Edilson\RasControl\Fachada\bin\DAO.dll
+C:\Users\Edilson Júnior\Desktop\Edilson\RasControl\Fachada\bin\Exceptions.dll
+C:\Users\Edilson Júnior\Desktop\Edilson\RasControl\Fachada\bin\Genericas.dll
+C:\Users\Edilson Júnior\Desktop\Edilson\RasControl\Fachada\bin\ClassesBasicas.pdb
+C:\Users\Edilson Júnior\Desktop\Edilson\RasControl\Fachada\bin\Controlador.pdb
+C:\Users\Edilson Júnior\Desktop\Edilson\RasControl\Fachada\bin\IDAO.pdb
+C:\Users\Edilson Júnior\Desktop\Edilson\RasControl\Fachada\bin\DAO.pdb
+C:\Users\Edilson Júnior\Desktop\Edilson\RasControl\Fachada\bin\Exceptions.pdb
+C:\Users\Edilson Júnior\Desktop\Edilson\RasControl\Fachada\bin\Genericas.pdb
+C:\Users\Edilson Júnior\Desktop\Edilson\RasControl\Fachada\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Edilson Júnior\Desktop\Edilson\RasControl\Fachada\obj\Debug\Fachada.dll
+C:\Users\Edilson Júnior\Desktop\Edilson\RasControl\Fachada\obj\Debug\Fachada.pdb
+C:\Users\Usuário\Documents\Visual Studio 2010\Projects\RasControl\Fachada\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Usuário\Documents\Visual Studio 2010\Projects\RasControl\Fachada\bin\Fachada.dll
+C:\Users\Usuário\Documents\Visual Studio 2010\Projects\RasControl\Fachada\bin\Fachada.pdb
+C:\Users\Usuário\Documents\Visual Studio 2010\Projects\RasControl\Fachada\bin\ClassesBasicas.dll
+C:\Users\Usuário\Documents\Visual Studio 2010\Projects\RasControl\Fachada\bin\Controlador.dll
+C:\Users\Usuário\Documents\Visual Studio 2010\Projects\RasControl\Fachada\bin\IDAO.dll
+C:\Users\Usuário\Documents\Visual Studio 2010\Projects\RasControl\Fachada\bin\DAO.dll
+C:\Users\Usuário\Documents\Visual Studio 2010\Projects\RasControl\Fachada\bin\Exceptions.dll
+C:\Users\Usuário\Documents\Visual Studio 2010\Projects\RasControl\Fachada\bin\Genericas.dll
+C:\Users\Usuário\Documents\Visual Studio 2010\Projects\RasControl\Fachada\bin\ClassesBasicas.pdb
+C:\Users\Usuário\Documents\Visual Studio 2010\Projects\RasControl\Fachada\bin\Controlador.pdb
+C:\Users\Usuário\Documents\Visual Studio 2010\Projects\RasControl\Fachada\bin\IDAO.pdb
+C:\Users\Usuário\Documents\Visual Studio 2010\Projects\RasControl\Fachada\bin\DAO.pdb
+C:\Users\Usuário\Documents\Visual Studio 2010\Projects\RasControl\Fachada\bin\Exceptions.pdb
+C:\Users\Usuário\Documents\Visual Studio 2010\Projects\RasControl\Fachada\bin\Genericas.pdb
+C:\Users\Usuário\Documents\Visual Studio 2010\Projects\RasControl\Fachada\obj\Debug\Fachada.dll
+C:\Users\Usuário\Documents\Visual Studio 2010\Projects\RasControl\Fachada\obj\Debug\Fachada.pdb
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\RasControl\Fachada\bin\Fachada.dll
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\RasControl\Fachada\bin\Fachada.pdb
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\RasControl\Fachada\bin\ClassesBasicas.dll
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\RasControl\Fachada\bin\Controlador.dll
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\RasControl\Fachada\bin\IDAO.dll
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\RasControl\Fachada\bin\DAO.dll
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\RasControl\Fachada\bin\Exceptions.dll
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\RasControl\Fachada\bin\Genericas.dll
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\RasControl\Fachada\bin\ClassesBasicas.pdb
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\RasControl\Fachada\bin\Controlador.pdb
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\RasControl\Fachada\bin\IDAO.pdb
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\RasControl\Fachada\bin\DAO.pdb
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\RasControl\Fachada\bin\Exceptions.pdb
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\RasControl\Fachada\bin\Genericas.pdb
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\RasControl\Fachada\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\RasControl\Fachada\obj\Debug\Fachada.dll
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\RasControl\Fachada\obj\Debug\Fachada.pdb
