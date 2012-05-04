@@ -63,7 +63,7 @@ namespace RasControlWeb
 
                 Session["TipoTela"] = "Detalhamento";
 
-                Session["id_tipoatividade"] = id;
+                Session["Codigo"] = id;
 
                 Session["PaginaOrigem"] = "ListagemTipoAtividade.aspx";
 
@@ -78,7 +78,7 @@ namespace RasControlWeb
                 int id = Int16.Parse(Server.HtmlDecode(row.Cells[0].Text));
 
                 Session["TipoTela"] = "Alteracao";
-                Session["id_tipoatividade"] = id;
+                Session["Codigo"] = id;
                 Session["PaginaOrigem"] = "ListagemTipoAtividade.aspx";
 
                 Response.Redirect("ManutencaoTipoAtividade.aspx");
