@@ -20,11 +20,11 @@ namespace RasControlWeb
     private void BindGrid()
     {   
       WebServiceRasControl service = new WebServiceRasControl();
-      GridView1.DataSource = service.ConsultarAllEstoriaFiltros(Convert.ToInt32(Request.Params["idProjeto"]), null);
+      GridView1.DataSource = service.ConsultarAllEstoriaFiltros(Convert.ToInt32(Request.Params["id_Projeto"]), null);
       GridView1.DataBind();
     }
-      
 
+    
     
 
     protected void btIncluir_Click(object sender, EventArgs e)
