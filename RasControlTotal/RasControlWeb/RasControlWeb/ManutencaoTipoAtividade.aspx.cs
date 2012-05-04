@@ -19,9 +19,9 @@ namespace RasControlWeb
 
             int id_tipoatividade = 0;
 
-            if (Session["id_tipoatividade"] != null) 
+            if (Session["Codigo"] != null) 
             {
-                id_tipoatividade = (int)Session["id_tipoatividade"];
+                id_tipoatividade = (int)Session["Codigo"];
             }
 
             if (!IsPostBack) 
@@ -64,6 +64,8 @@ namespace RasControlWeb
                 WebServiceRasControl service = new WebServiceRasControl();
 
                 TipoAtividade tipoAtividade = service.ConsultarTipoAtividadePorId(id_tipoatividade);
+                this.tbCodigo.Text = tipoAtividade.Codigo.ToString();
+                this.tbDescricao.Text = tipoAtividade.Descricao;
             }
             catch (Exception ex)
             {
