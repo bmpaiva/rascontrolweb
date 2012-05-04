@@ -126,8 +126,19 @@ namespace RasControlWeb
       }
       catch (Exception ex)
       {
-        lbErro.Text = ex.Message;
+        if (tbDescricao.Text == "")
+        {
+          Page.RegisterClientScriptBlock("Aviso",
+                                          "<script type= text/javascript>alert('Campo Descrição em branco!');</script>");
 
+          tbDescricao.Focus();
+
+
+        }
+        else
+        {
+          lbErro.Text = ex.Message;
+        }
       }
 
     }
