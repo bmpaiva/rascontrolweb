@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ManutencaoEstoria.aspx.cs" Inherits="RasControlWeb.ManutencaoEstoria" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
   <style type="text/css">
     #Select1
     {
@@ -21,15 +22,18 @@
         </tr>
         <tr>           
             <td><asp:Label ID="Label2" runat="server" Text="SP:"></asp:Label></td>
-            <td><asp:TextBox ID="tbSp" runat="server" Width="320px"></asp:TextBox></td>
-            <td><asp:Label ID="Label4" runat="server" Text="SP:"></asp:Label></td>
-            <td><asp:TextBox ID="tbBv" runat="server" Width="320px"></asp:TextBox></td>
+            <td><asp:TextBox ID="tbSp" runat="server" Width="320px" Autopostback="true" 
+                ontextchanged="tbSp_TextChanged"></asp:TextBox></td>
+            <td><asp:Label ID="Label4" runat="server" Text="BV:"></asp:Label></td>
+            <td><asp:TextBox ID="tbBv" runat="server" Width="320px"  Autopostback="true" 
+                ontextchanged="tbBv_TextChanged"></asp:TextBox></td>
             
         </tr>
          <tr>          
             
-            <td><asp:Label ID="Label5" runat="server" Text="SP:"></asp:Label></td>
-            <td><asp:TextBox ID="tbRoi" runat="server" Width="320px"></asp:TextBox></td>
+            <td><asp:Label ID="Label5" runat="server" Text="ROI:"></asp:Label></td>
+            <td><asp:TextBox ID="tbRoi" runat="server" Width="320px" 
+                ontextchanged="tbRoi_TextChanged"></asp:TextBox></td>
             
         </tr>
  </table>
