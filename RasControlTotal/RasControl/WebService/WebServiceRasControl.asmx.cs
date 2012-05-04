@@ -1313,6 +1313,7 @@ namespace WebService
         {
             try
             {
+                
                 Fachada.Fachada.Instancia.AlterarTipoAtividade(tipoAtividade);
 
             }
