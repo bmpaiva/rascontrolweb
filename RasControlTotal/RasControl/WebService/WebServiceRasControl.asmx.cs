@@ -1011,6 +1011,89 @@ namespace WebService
         }
         #endregion
 
+        #region TipoAtividade
+
+        [WebMethod]
+        public void CadastrarTipoAtividade(TipoAtividade tipoAtividade)
+        {
+            try
+            {
+                Fachada.Fachada.Instancia.CadastrarTipoAtividade(tipoAtividade);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [WebMethod]
+        public void AlterarTipoAtividade(TipoAtividade tipoAtividade)
+        {
+            try
+            {
+                Fachada.Fachada.Instancia.AlterarTipoAtividade(tipoAtividade);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [WebMethod]
+        public void DeletarTipoAtividade(int id_tipoatividade)
+        {
+            try
+            {
+                Fachada.Fachada.Instancia.DeletarTipoAtividade(id_tipoatividade);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [WebMethod]
+        public TipoAtividade ConsultarTipoAtividadePorId(int id_tipoatividade)
+        {
+            try
+            {
+
+                return Fachada.Fachada.Instancia.ConsultarTipoAtividadePorId(id_tipoatividade);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [WebMethod]
+        public List<TipoAtividade> ConsultarAllTipoAtividadeFiltros(int id_atividade, string descricao)
+        {
+            try
+            {
+                return Fachada.Fachada.Instancia.ConsultarAllTipoAtividadeFiltros(id_atividade, descricao);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [WebMethod]
+        public List<TipoAtividade> ListarTipoAtividade()
+        {
+            try
+            {
+                return Fachada.Fachada.Instancia.ListarTipoAtividade();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
 
     }
 }

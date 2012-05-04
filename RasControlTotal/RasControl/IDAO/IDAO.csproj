@@ -62,6 +62,7 @@
     <Compile Include="IDAOPermissao.cs" />
     <Compile Include="IDAOProjeto.cs" />
     <Compile Include="IDAOSprint.cs" />
+    <Compile Include="IDAOTipoAtividade.cs" />
     <Compile Include="IDAOUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
