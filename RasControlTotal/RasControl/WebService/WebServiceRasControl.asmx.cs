@@ -29,7 +29,7 @@ namespace WebService
             XmlDocument xmlDocumento = new XmlDocument();
             StringBuilder xmlString = new StringBuilder();
 
-             int quantidadeDiasSprint = Fachada.Fachada.Instancia.SelectQtdDiasSprint(1, 1);
+            int quantidadeDiasSprint = Fachada.Fachada.Instancia.SelectQtdDiasSprint(idProjeto, idSprint);
              double quantidadeHorasPlanejadaSprint = Fachada.Fachada.Instancia.SelectQtdHorasPlanejadaSprint(1, 1);
              double quantidadeHorasPorDia = 1;
 
@@ -74,6 +74,65 @@ namespace WebService
             return xmlDocumento;
 
         }
+
+        #endregion
+
+        #region XmlBurnDownMobile
+
+        [WebMethod]
+        public string XmlBurnDownMobile(int idProjeto, int idSprint)
+        {
+            XmlDocument xmlDocumento = new XmlDocument();
+            StringBuilder xmlString = new StringBuilder();
+
+            int quantidadeDiasSprint = Fachada.Fachada.Instancia.SelectQtdDiasSprint(idProjeto, idSprint);
+            double quantidadeHorasPlanejadaSprint = Fachada.Fachada.Instancia.SelectQtdHorasPlanejadaSprint(1, 1);
+            double quantidadeHorasPorDia = 1;
+
+            if (quantidadeDiasSprint > 1 && quantidadeHorasPlanejadaSprint > 0)
+            {
+                quantidadeHorasPorDia = Math.Truncate(quantidadeHorasPlanejadaSprint / (quantidadeDiasSprint - 1));
+            }
+
+            xmlString.Append("<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><?xml-stylesheet type='text/xsl' version='1.0'?>");
+            xmlString.Append("<Burndown xmlns=\"http://www.w3.org/2001/XMLSchema\">");
+            xmlString.Append("<Sprint>");
+            xmlString.Append("<NumeroProjeto> " + idProjeto.ToString() + " </NumeroProjeto>");
+            xmlString.Append("<NumeroSprint> " + idSprint.ToString() + " </NumeroSprint>");
+            xmlString.Append("<QtdDias> " + quantidadeDiasSprint.ToString() + " </QtdDias>");
+            xmlString.Append("<Dias>");
+
+
+            double qtdPlanejadoRestante = quantidadeHorasPlanejadaSprint;
+            double valorRealizado = qtdPlanejadoRestante;
+            for (int i = 1; i <= quantidadeDiasSprint; i++)
+            {
+                double qtdHorasRalizadaDia = Fachada.Fachada.Instancia.SelectTamanhoRealizadoDia(idProjeto, idSprint, i);
+                if (qtdHorasRalizadaDia > 0)
+                {
+                    valorRealizado = valorRealizado - qtdHorasRalizadaDia;
+                }
+
+                xmlString.Append("<Dia>");
+                xmlString.Append("<Numero> " + i.ToString() + " </Numero>");
+                xmlString.Append("<Previsto> " + qtdPlanejadoRestante.ToString() + " </Previsto>");
+                xmlString.Append("<Realizado> " + valorRealizado.ToString() + " </Realizado>");
+                xmlString.Append("</Dia>");
+
+                qtdPlanejadoRestante = qtdPlanejadoRestante - quantidadeHorasPorDia;
+            }
+
+            xmlString.Append("</Dias>");
+            xmlString.Append("</Sprint>");
+            xmlString.Append("</Burndown>");
+
+            return xmlString.ToString();
+
+        }
+
+        #endregion
+
+        #region XmlDesempenhoMembrosProjeto
 
         [WebMethod]
         public XmlDocument XmlDesempenhoMembrosProjeto (int idProjeto)
@@ -235,6 +294,169 @@ namespace WebService
         }
 
         [WebMethod]
+        public String XmlDesempenhoMembrosProjetoMobile(int idProjeto)
+        {
+            XmlDocument xmlDocumento = new XmlDocument();
+            StringBuilder xmlString = new StringBuilder();
+
+            xmlString.Append("<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><?xml-stylesheet type='text/xsl' version='1.0'?>");
+            xmlString.Append("<Avaliacao xmlns=\"http://www.w3.org/2001/XMLSchema\">");
+            xmlString.Append("<Projetos>");
+            xmlString.Append("<Projeto>");
+            xmlString.Append("<QtdSprints> 5 </QtdSprints>");
+            xmlString.Append("<Membros>");
+            xmlString.Append("<QtdMembros> 5 </QtdMembros>");
+
+            xmlString.Append("<Membro>");
+            xmlString.Append("<Nome> Nilson </Nome>");
+            xmlString.Append("<Sprints>");
+            xmlString.Append("<Sprint>");
+            xmlString.Append("<Codigo> 1 </Codigo>");
+            xmlString.Append("<Media> 8 </Media>");
+            xmlString.Append("</Sprint>");
+            xmlString.Append("<Sprint>");
+            xmlString.Append("<Codigo> 2 </Codigo>");
+            xmlString.Append("<Media> 4 </Media>");
+            xmlString.Append("</Sprint>");
+            xmlString.Append("<Sprint>");
+            xmlString.Append("<Codigo> 3 </Codigo>");
+            xmlString.Append("<Media> 6 </Media>");
+            xmlString.Append("</Sprint>");
+            xmlString.Append("<Sprint>");
+            xmlString.Append("<Codigo> 4 </Codigo>");
+            xmlString.Append("<Media> 9 </Media>");
+            xmlString.Append("</Sprint>");
+            xmlString.Append("<Sprint>");
+            xmlString.Append("<Codigo> 5 </Codigo>");
+            xmlString.Append("<Media> 10 </Media>");
+            xmlString.Append("</Sprint>");
+            xmlString.Append("</Sprints>");
+            xmlString.Append("</Membro>");
+
+            xmlString.Append("<Membro>");
+            xmlString.Append("<Nome> Gisele </Nome>");
+            xmlString.Append("<Sprints>");
+            xmlString.Append("<Sprint>");
+            xmlString.Append("<Codigo> 1 </Codigo>");
+            xmlString.Append("<Media> 2 </Media>");
+            xmlString.Append("</Sprint>");
+            xmlString.Append("<Sprint>");
+            xmlString.Append("<Codigo> 2 </Codigo>");
+            xmlString.Append("<Media> 4 </Media>");
+            xmlString.Append("</Sprint>");
+            xmlString.Append("<Sprint>");
+            xmlString.Append("<Codigo> 3 </Codigo>");
+            xmlString.Append("<Media> 5 </Media>");
+            xmlString.Append("</Sprint>");
+            xmlString.Append("<Sprint>");
+            xmlString.Append("<Codigo> 4 </Codigo>");
+            xmlString.Append("<Media> 5 </Media>");
+            xmlString.Append("</Sprint>");
+            xmlString.Append("<Sprint>");
+            xmlString.Append("<Codigo> 5 </Codigo>");
+            xmlString.Append("<Media> 8 </Media>");
+            xmlString.Append("</Sprint>");
+            xmlString.Append("</Sprints>");
+            xmlString.Append("</Membro>");
+
+
+            xmlString.Append("<Membro>");
+            xmlString.Append("<Nome> Igor </Nome>");
+            xmlString.Append("<Sprints>");
+            xmlString.Append("<Sprint>");
+            xmlString.Append("<Codigo> 1 </Codigo>");
+            xmlString.Append("<Media> 5 </Media>");
+            xmlString.Append("</Sprint>");
+            xmlString.Append("<Sprint>");
+            xmlString.Append("<Codigo> 2 </Codigo>");
+            xmlString.Append("<Media> 4 </Media>");
+            xmlString.Append("</Sprint>");
+            xmlString.Append("<Sprint>");
+            xmlString.Append("<Codigo> 3 </Codigo>");
+            xmlString.Append("<Media> 3 </Media>");
+            xmlString.Append("</Sprint>");
+            xmlString.Append("<Sprint>");
+            xmlString.Append("<Codigo> 4 </Codigo>");
+            xmlString.Append("<Media> 2 </Media>");
+            xmlString.Append("</Sprint>");
+            xmlString.Append("<Sprint>");
+            xmlString.Append("<Codigo> 5 </Codigo>");
+            xmlString.Append("<Media> 1 </Media>");
+            xmlString.Append("</Sprint>");
+            xmlString.Append("</Sprints>");
+            xmlString.Append("</Membro>");
+
+
+            xmlString.Append("<Membro>");
+            xmlString.Append("<Nome> Pedro </Nome>");
+            xmlString.Append("<Sprints>");
+            xmlString.Append("<Sprint>");
+            xmlString.Append("<Codigo> 1 </Codigo>");
+            xmlString.Append("<Media> 1 </Media>");
+            xmlString.Append("</Sprint>");
+            xmlString.Append("<Sprint>");
+            xmlString.Append("<Codigo> 2 </Codigo>");
+            xmlString.Append("<Media> 2 </Media>");
+            xmlString.Append("</Sprint>");
+            xmlString.Append("<Sprint>");
+            xmlString.Append("<Codigo> 3 </Codigo>");
+            xmlString.Append("<Media> 3 </Media>");
+            xmlString.Append("</Sprint>");
+            xmlString.Append("<Sprint>");
+            xmlString.Append("<Codigo> 4 </Codigo>");
+            xmlString.Append("<Media> 4 </Media>");
+            xmlString.Append("</Sprint>");
+            xmlString.Append("<Sprint>");
+            xmlString.Append("<Codigo> 5 </Codigo>");
+            xmlString.Append("<Media> 5 </Media>");
+            xmlString.Append("</Sprint>");
+            xmlString.Append("</Sprints>");
+            xmlString.Append("</Membro>");
+
+
+            xmlString.Append("<Membro>");
+            xmlString.Append("<Nome> Bruno </Nome>");
+            xmlString.Append("<Sprints>");
+            xmlString.Append("<Sprint>");
+            xmlString.Append("<Codigo> 1 </Codigo>");
+            xmlString.Append("<Media> 8 </Media>");
+            xmlString.Append("</Sprint>");
+            xmlString.Append("<Sprint>");
+            xmlString.Append("<Codigo> 2 </Codigo>");
+            xmlString.Append("<Media> 8 </Media>");
+            xmlString.Append("</Sprint>");
+            xmlString.Append("<Sprint>");
+            xmlString.Append("<Codigo> 3 </Codigo>");
+            xmlString.Append("<Media> 8 </Media>");
+            xmlString.Append("</Sprint>");
+            xmlString.Append("<Sprint>");
+            xmlString.Append("<Codigo> 4 </Codigo>");
+            xmlString.Append("<Media> 8 </Media>");
+            xmlString.Append("</Sprint>");
+            xmlString.Append("<Sprint>");
+            xmlString.Append("<Codigo> 5 </Codigo>");
+            xmlString.Append("<Media> 7 </Media>");
+            xmlString.Append("</Sprint>");
+            xmlString.Append("</Sprints>");
+            xmlString.Append("</Membro>");
+
+
+            xmlString.Append("</Membros>");
+            xmlString.Append("</Projeto>");
+            xmlString.Append("</Projetos>");
+            xmlString.Append("</Avaliacao>");
+
+          
+            return xmlString.ToString();
+
+
+        }
+
+        #endregion
+
+        #region XmlBurnUp
+
+        [WebMethod]
         public XmlDocument XmlBurnUp(int idProjeto, int idSprint)
         {
             XmlDocument xmlDocumento = new XmlDocument();
@@ -250,7 +472,7 @@ namespace WebService
             }
 
             xmlString.Append("<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><?xml-stylesheet type='text/xsl' version='1.0'?>");
-            xmlString.Append("<Burndown xmlns=\"http://www.w3.org/2001/XMLSchema\">");
+            xmlString.Append("<BurnUp xmlns=\"http://www.w3.org/2001/XMLSchema\">");
             xmlString.Append("<Sprint>");
             xmlString.Append("<NumeroProjeto> " + idProjeto.ToString() + " </NumeroProjeto>");
             xmlString.Append("<NumeroSprint> " + idSprint.ToString() + " </NumeroSprint>");
@@ -279,12 +501,71 @@ namespace WebService
 
             xmlString.Append("</Dias>");
             xmlString.Append("</Sprint>");
-            xmlString.Append("</Burndown>");
+            xmlString.Append("</BurnUp>");
 
             xmlDocumento.LoadXml(xmlString.ToString());
             return xmlDocumento;
 
         }
+
+        #endregion
+
+        #region XmlBurnUpMobile
+
+        [WebMethod]
+        public string XmlBurnUpMobile(int idProjeto, int idSprint)
+        {
+            XmlDocument xmlDocumento = new XmlDocument();
+            StringBuilder xmlString = new StringBuilder();
+
+            int quantidadeDiasSprint = Fachada.Fachada.Instancia.SelectQtdDiasSprint(idProjeto, idSprint);
+            double quantidadeHorasPlanejadaSprint = Fachada.Fachada.Instancia.SelectQtdHorasPlanejadaSprint(1, 1);
+            double quantidadeHorasPorDia = 1;
+
+            if (quantidadeDiasSprint > 1 && quantidadeHorasPlanejadaSprint > 0)
+            {
+                quantidadeHorasPorDia = Math.Truncate(quantidadeHorasPlanejadaSprint / (quantidadeDiasSprint - 1));
+            }
+
+            xmlString.Append("<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><?xml-stylesheet type='text/xsl' version='1.0'?>");
+            xmlString.Append("<BurnUp xmlns=\"http://www.w3.org/2001/XMLSchema\">");
+            xmlString.Append("<Sprint>");
+            xmlString.Append("<NumeroProjeto> " + idProjeto.ToString() + " </NumeroProjeto>");
+            xmlString.Append("<NumeroSprint> " + idSprint.ToString() + " </NumeroSprint>");
+            xmlString.Append("<QtdDias> " + quantidadeDiasSprint.ToString() + " </QtdDias>");
+            xmlString.Append("<Dias>");
+
+
+            double qtdPlanejado = 0;//quantidadeHorasPlanejadaSprint;
+            double valorRealizado = 0;//qtdPlanejadoRestante;
+            for (int i = 1; i <= quantidadeDiasSprint; i++)
+            {
+                double qtdHorasRalizadaDia = Fachada.Fachada.Instancia.SelectTamanhoRealizadoDia(idProjeto, idSprint, i);
+                if (qtdHorasRalizadaDia > 0)
+                {
+                    valorRealizado = valorRealizado + qtdHorasRalizadaDia;
+                }
+
+                xmlString.Append("<Dia>");
+                xmlString.Append("<Numero> " + i.ToString() + " </Numero>");
+                xmlString.Append("<Previsto> " + qtdPlanejado.ToString() + " </Previsto>");
+                xmlString.Append("<Realizado> " + valorRealizado.ToString() + " </Realizado>");
+                xmlString.Append("</Dia>");
+
+                qtdPlanejado = qtdPlanejado + quantidadeHorasPorDia;
+            }
+
+            xmlString.Append("</Dias>");
+            xmlString.Append("</Sprint>");
+            xmlString.Append("</BurnUp>");
+
+
+            return xmlString.ToString();
+
+        }
+
+        #endregion
+
 
         #endregion
 
