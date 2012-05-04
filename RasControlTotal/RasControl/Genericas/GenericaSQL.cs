@@ -818,7 +818,7 @@ namespace Genericas
         public static string UpdateTipoAtividade(TipoAtividade tipoAtividade)
         {
             return "UPDATE TBTIPOATIVIDADE SET "
-            + "DESCRICAO = '" + tipoAtividade.Descricao + "' , "
+            + "DESCRICAO = '" + tipoAtividade.Descricao + "'  "
             + " WHERE ID_TIPOATIVIDADE = " + tipoAtividade.Codigo + " AND  IND_ATIVO = 'S'";
         }
 
