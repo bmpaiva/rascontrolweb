@@ -761,6 +761,74 @@ namespace Genericas
         }
 
         #endregion
+
+        #region TipoAtividade
+
+        public static string ConsultarTipoAtividadeCodigo(int id_tipoatividade)
+        {
+            StringBuilder query = new StringBuilder();
+            query.Append(" SELECT ID_TIPOATIVIDADE, DESCRICAO");
+            query.Append(" FROM TBTIPOATIVIDADE ");
+            query.Append(" Where IND_ATIVO = 'S'");
+            if (id_tipoatividade.ToString() != "")
+            {
+                query.Append(" And ID_TIPOATIVIDADE = " + id_tipoatividade.ToString());
+            }
+            return query.ToString();
+        }
+
+        public static string ConsultarAllTipoAtividadeFiltros(int id_tipoatividade, string descricao)
+        {
+            StringBuilder query = new StringBuilder();
+            query.Append(" SELECT ID_TIPOATIVIDADE, DESCRICAO");
+            query.Append(" FROM TBTIPOATIVIDADE ");
+            query.Append(" Where IND_ATIVO = 'S'");
+            if (descricao != "")
+            {
+                query.Append(" And DESCRICAO = '" + descricao + "'");
+            }
+            if (id_tipoatividade >= 0)
+            {
+                query.Append(" And ID_TIPOATIVIDADE = " + id_tipoatividade.ToString());
+            }
+            return query.ToString();
+        }
+
+        public static string ConsultarAllTipoAtividade()
+        {
+            StringBuilder query = new StringBuilder();
+            query.Append(" SELECT ID_TIPOATIVIDADE, DESCRICAO ");
+            query.Append(" FROM TBTIPOATIVIDADE ");
+            query.Append(" Where IND_ATIVO = 'S'");
+
+            return query.ToString();
+        }
+
+        public static string CadastrarTipoAtividade(TipoAtividade tipoAtividade)
+        {
+            return "INSERT INTO TBTIPOATIVIDADE " +
+                   " ( DESCRICAO, " +
+                   " IND_ATIVO  ) " +
+                   " VALUES (" +
+                   " '" + tipoAtividade.Descricao + "', " +
+                   " 'S' " +
+                   " );";
+        }
+
+        public static string UpdateTipoAtividade(TipoAtividade tipoAtividade)
+        {
+            return "UPDATE TBTIPOATIVIDADE SET "
+            + "DESCRICAO = '" + tipoAtividade.Descricao + "' , "
+            + " WHERE ID_TIPOATIVIDADE = " + tipoAtividade.Codigo + " AND  IND_ATIVO = 'S'";
+        }
+
+        public static string DeleteTipoAtividade(int id_tipoatividade)
+        {
+            return "UPDATE TBTIPOATIVIDADE SET IND_ATIVO = 'N' WHERE ID_TIPOATIVIDADE = " + id_tipoatividade + " AND  IND_ATIVO = 'S'";
+        }
+
+
+        #endregion
     }
    
 }

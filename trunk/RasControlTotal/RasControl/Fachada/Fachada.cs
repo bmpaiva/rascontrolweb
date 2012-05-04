@@ -639,7 +639,7 @@ namespace Fachada
 
       #endregion
 
-     #region Sprint
+        #region Sprint
 
         public void CadastrarSprint(Sprint sprint)
         {
@@ -716,6 +716,83 @@ namespace Fachada
             }
         }
 
+        #endregion
+
+        #region TipoAtividade
+        public void CadastrarTipoAtividade(TipoAtividade tipoAtividade)
+        {
+            try
+            {
+                controlador.CadastrarTipoAtividade(tipoAtividade);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void AlterarTipoAtividade(TipoAtividade tipoAtividade)
+        {
+            try
+            {
+                controlador.AlterarTipoAtividade(tipoAtividade);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void DeletarTipoAtividade(int id_tipoatividade)
+        {
+            try
+            {
+                controlador.DeletarTipoAtividade(id_tipoatividade);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public TipoAtividade ConsultarTipoAtividadePorId(int id_tipoatividade)
+        {
+            try
+            {
+
+                return controlador.ConsultarTipoAtividadePorId(id_tipoatividade);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<TipoAtividade> ConsultarAllTipoAtividadeFiltros(int id_tipoatividade, string descricao)
+        {
+            try
+            {
+                return controlador.ConsultarAllTipoAtividadeFiltros(id_tipoatividade, descricao);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<TipoAtividade> ListarTipoAtividade()
+        {
+            try
+            {
+                return controlador.ListarTipoAtividade();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         #endregion
 
     }

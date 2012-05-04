@@ -20,7 +20,8 @@ namespace Controlador
         IDAOImpedimentos iDAOImpedimentos;
         IDAOPerfilUsuario iDaoPerfilUsuario;
         IDAOEstoria iDaoEstoria;
-	IDAOSprint iDAOSprint;
+	    IDAOSprint iDAOSprint;
+        IDAOTipoAtividade iDAOTipoAtividade;
      
         public Controlador()
         {
@@ -35,6 +36,7 @@ namespace Controlador
                 iDaoPerfilUsuario = new DAOPerfilUsuario();
                 iDaoEstoria = new DAOEstoria();
                 iDAOSprint = new DAOSprint();
+                iDAOTipoAtividade = new DAOTipoAtividade();
             }
             catch (Exception ex)
             {
@@ -970,6 +972,98 @@ namespace Controlador
             try
             {
                 return iDAOSprint.ConsultarAllSprint();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
+
+        #region TipoAtividade
+
+        public void ValidarTipoAtividade(TipoAtividade tipoAtividade)
+        {
+            if (tipoAtividade.Descricao == "")
+            {
+                throw new ExceptionGeral("A descrição do tipo atividade não pode ser nula");
+            }
+        }
+
+        public void CadastrarTipoAtividade(TipoAtividade tipoAtividade)
+        {
+
+            try
+            {
+                ValidarTipoAtividade(tipoAtividade);
+                iDAOTipoAtividade.CadastrarTipoAtividade(tipoAtividade);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void AlterarTipoAtividade(TipoAtividade tipoAtividade)
+        {
+            try
+            {
+                ValidarTipoAtividade(tipoAtividade);
+                iDAOTipoAtividade.UpdateTipoAtividade(tipoAtividade);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void DeletarTipoAtividade(int id_tipoatividade)
+        {
+            try
+            {
+                iDAOTipoAtividade.DeleteTipoAtividade(id_tipoatividade);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public TipoAtividade ConsultarTipoAtividadePorId(int id_tipoatividade)
+        {
+            try
+            {
+                if (id_tipoatividade.ToString() == "")
+                {
+                    throw new ExceptionGeral("O Código do tipo atividade não pode ser nulo");
+                }
+                return iDAOTipoAtividade.ConsultarTipoAtividadeCodigo(id_tipoatividade);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<TipoAtividade> ConsultarAllTipoAtividadeFiltros(int id_tipoatividade, string descricao)
+        {
+            try
+            {
+                return iDAOTipoAtividade.ConsultarAllTipoAtividadeFiltros(id_tipoatividade, descricao);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<TipoAtividade> ListarTipoAtividade()
+        {
+            try
+            {
+                return iDAOTipoAtividade.ConsultarAllTipoAtividade();
             }
             catch (Exception ex)
             {

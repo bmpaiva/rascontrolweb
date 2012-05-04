@@ -62,6 +62,7 @@
     <Compile Include="DAOPermissao.cs" />
     <Compile Include="DAOProjeto.cs" />
     <Compile Include="DAOSprint.cs" />
+    <Compile Include="DAOTipoAtividade.cs" />
     <Compile Include="DAOUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
