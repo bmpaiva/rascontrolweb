@@ -282,7 +282,7 @@ namespace RasControlWeb
       {
         CalcularRoi();
       }
-      // CalcularRoi();
+      
     }
 
   }
