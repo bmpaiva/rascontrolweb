@@ -117,6 +117,8 @@
     <Content Include="ManutencaoPermissao.aspx" />
     <Content Include="PermissoesPerfil.aspx" />
     <Content Include="Index.aspx" />
+    <Content Include="ListagemTipoAtividade.aspx" />
+    <Content Include="ManutencaoTipoAtividade.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BurnDown.aspx.cs">
@@ -276,6 +278,20 @@
     </Compile>
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListagemTipoAtividade.aspx.cs">
+      <DependentUpon>ListagemTipoAtividade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListagemTipoAtividade.aspx.designer.cs">
+      <DependentUpon>ListagemTipoAtividade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManutencaoTipoAtividade.aspx.cs">
+      <DependentUpon>ManutencaoTipoAtividade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManutencaoTipoAtividade.aspx.designer.cs">
+      <DependentUpon>ManutencaoTipoAtividade.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
