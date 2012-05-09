@@ -235,7 +235,28 @@ namespace RasControlWeb
       {*/
         double roi = Convert.ToDouble(tbBv.Text) / Convert.ToDouble(tbSp.Text);
         string roi2 = roi.ToString();
-        tbRoi.Text = roi2.Substring(0, 3);
+
+        if (Convert.ToDouble(tbSp.Text) > 0)
+        {
+          try
+          {
+            tbRoi.Text = roi2.Substring(0, 3);
+          }
+          catch
+          {
+            tbRoi.Text = roi2.Substring(0, 1) + ",0";
+          }
+
+        }
+        else
+        {
+
+          Page.RegisterClientScriptBlock("Aviso",
+          "<script type= text/javascript>alert('O SP têm que maior que Zero');</script>");
+          tbSp.Focus();
+
+          
+        }
         // double roi = Convert.ToDouble(tbBv.Text) / Convert.ToDouble(tbSp.Text);
         //tbRoi.Text = roi.ToString();
       //}
