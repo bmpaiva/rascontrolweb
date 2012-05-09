@@ -25,7 +25,7 @@
             <td><asp:TextBox ID="tbSp" runat="server" Width="320px" Autopostback="true" 
                 ontextchanged="tbSp_TextChanged"></asp:TextBox></td>
             <td><asp:Label ID="Label4" runat="server" Text="BV:"></asp:Label></td>
-            <td><asp:TextBox ID="tbBv" runat="server" Width="320px"  Autopostback="true" 
+            <td><asp:TextBox ID="tbBv" runat="server" Width="320px" Autopostback="true" 
                 ontextchanged="tbBv_TextChanged"></asp:TextBox></td>
             
         </tr>
