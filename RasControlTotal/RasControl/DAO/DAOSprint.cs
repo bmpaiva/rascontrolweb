@@ -143,5 +143,52 @@ namespace DAO
             GenericaDAO dao = GenericaDAO.getInstancia();
             dao.ExecuteNonQuery(CommandType.Text, sql);
         }
+
+        public List<Sprint> ConsultarAllSprintEstoria(int idSprint)
+        {
+            GenericaDAO dao = GenericaDAO.getInstancia();
+
+            try
+            {
+                List<Sprint> lista = new List<Sprint>();
+                string sql = GenericaSQL.ConsultarAllSprintEstoria(idSprint);
+
+                SqlDataReader dr = dao.ExecuteReader(CommandType.Text, sql);
+
+                while (dr.Read())
+                {
+                    int codigo = (int)dr["ID_SPRINT"];
+                    Sprint sprint = ConsultarSprintCodigo(idSprint);
+                    lista.Add(sprint);
+                }
+                dr.Close();
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+
+            }
+        }
+
+        public void CadastrarSprintEstoria(int idEstoria, Estoria estoria)
+        {
+            string sql = GenericaSQL.CadastrarSprintEstoria(idEstoria, estoria);
+            GenericaDAO dao = GenericaDAO.getInstancia();
+
+            dao.ExecuteNonQuery(CommandType.Text, sql);
+
+        }
+
+        public void DeleteSprintEstoria(int idEstoria, int idSprint)
+        {
+            string sql = GenericaSQL.DeleteSprintEstoria(idEstoria, idSprint);
+            GenericaDAO dao = GenericaDAO.getInstancia();
+            dao.ExecuteNonQuery(CommandType.Text, sql);
+        }
     }
 }

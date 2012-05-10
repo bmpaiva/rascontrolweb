@@ -725,6 +725,19 @@ namespace Genericas
             return query.ToString();
         }
 
+        public static string ConsultarAllSprintEstoria(int idSprint)
+        {
+            StringBuilder query = new StringBuilder();
+            query.Append(" SELECT ID_ESTORIA_SPRINT ");
+            query.Append(" FROM TBESTORIASPRINT ");
+
+            if (idSprint >= 0)
+            {
+                query.Append(" Where ID_ESTORIA_SPRINT = " + idSprint.ToString());
+            }
+            return query.ToString();
+        }
+
         public static string CadastrarSprint(Sprint sprint)
         {
             return "INSERT INTO TBSPRINTS " +
@@ -758,6 +771,21 @@ namespace Genericas
         public static string DeleteSprint(int id_sprint)
         {
             return "UPDATE TBSPRINTS SET IND_ATIVO = 'N' WHERE ID_SPRINT = " + id_sprint + " AND  IND_ATIVO = 'S'";
+        }
+
+        public static string CadastrarSprintEstoria(int idSprint, Estoria estoria)
+        {
+            return "INSERT INTO TBESTORIASPRINT " +
+                   " ( ID_SPRINT, " +
+                   " ID_ESTORIA) " +
+                   " VALUES (" +
+                   " " + idSprint.ToString() + ", " +
+                   " " + estoria.Codigo.ToString() + "); ";
+        }
+
+        public static string DeleteSprintEstoria(int idEstoria, int idSprint)
+        {
+            return "DELETE FROM TBESTORIASPRINT WHERE ID_SPRINT = " + idSprint.ToString() + " AND  ID_ESTORIA = " + idEstoria.ToString();
         }
 
         #endregion

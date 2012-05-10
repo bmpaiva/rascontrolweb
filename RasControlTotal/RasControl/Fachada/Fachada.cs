@@ -716,6 +716,43 @@ namespace Fachada
             }
         }
 
+        public List<Sprint> ConsultarAllSprintEstoria(int idSprint)
+        {
+            try
+            {
+                return controlador.ConsultarAllSprintEstoria(idSprint);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void CadastrarSprintEstoria(int idSprint, Estoria estoria)
+        {
+            try
+            {
+                controlador.CadastrarSprintEstoria(idSprint, estoria);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void DeletarSprintEstoria(int idEstoria, int idSprint)
+        {
+            try
+            {
+                controlador.DeletarSprintEstoria(idEstoria, idSprint);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         #endregion
 
         #region TipoAtividade

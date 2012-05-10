@@ -979,6 +979,43 @@ namespace Controlador
             }
         }
 
+        public List<Sprint> ConsultarAllSprintEstoria(int idSprint)
+        {
+            try
+            {
+                return iDAOSprint.ConsultarAllSprintEstoria(idSprint);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void CadastrarSprintEstoria(int idSprint, Estoria estoria)
+        {
+
+            try
+            {
+                iDAOSprint.CadastrarSprintEstoria(idSprint, estoria);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void DeletarSprintEstoria(int idEstoria, int idSprint)
+        {
+            try
+            {
+                iDAOSprint.DeleteSprintEstoria(idEstoria, idSprint);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         #endregion
 
         #region TipoAtividade

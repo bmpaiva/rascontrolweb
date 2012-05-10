@@ -14,5 +14,10 @@ namespace IDAO
         void CadastrarSprint(Sprint sprint);
         void UpdateSprint(Sprint sprint);
         void DeleteSprint(int id_sprint);
+
+        // Sprint Estoria
+        List<Sprint> ConsultarAllSprintEstoria(int idSprint);
+        void CadastrarSprintEstoria(int idSprint, Estoria estoria);
+        void DeleteSprintEstoria(int idSprint, int idEstoria);
     }
 }

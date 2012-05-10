@@ -565,10 +565,7 @@ namespace WebService
         }
 
         #endregion
-
-
-    
-
+        
         #region Permissao
 
         [WebMethod]
@@ -1290,6 +1287,47 @@ namespace WebService
                 throw ex;
             }
         }
+
+        [WebMethod]
+        public List<Sprint> ConsultarAllSprintEstoria(int idEstoria)
+        {
+            try
+            {
+                return Fachada.Fachada.Instancia.ConsultarAllSprintEstoria(idEstoria);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [WebMethod]
+        public void CadastrarSprintEstoria(int idEstoria, Estoria estoria)
+        {
+            try
+            {
+                Fachada.Fachada.Instancia.CadastrarSprintEstoria(idEstoria, estoria);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [WebMethod]
+        public void DeletarSprintEstoria(int idEstoria, int idSprint)
+        {
+            try
+            {
+                Fachada.Fachada.Instancia.DeletarSprintEstoria(idEstoria, idSprint);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         #endregion
 
         #region TipoAtividade
