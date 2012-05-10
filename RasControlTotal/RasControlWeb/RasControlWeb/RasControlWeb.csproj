@@ -13,6 +13,7 @@
     <RootNamespace>RasControlWeb</RootNamespace>
     <AssemblyName>RasControlWeb</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -103,6 +104,7 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="SprintEstoria.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -292,6 +294,13 @@
     </Compile>
     <Compile Include="ManutencaoTipoAtividade.aspx.designer.cs">
       <DependentUpon>ManutencaoTipoAtividade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SprintEstoria.aspx.cs">
+      <DependentUpon>SprintEstoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SprintEstoria.aspx.designer.cs">
+      <DependentUpon>SprintEstoria.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
