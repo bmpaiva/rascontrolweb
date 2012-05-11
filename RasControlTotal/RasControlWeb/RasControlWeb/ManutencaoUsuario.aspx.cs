@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using ClassesBasicas;
+using System.Text.RegularExpressions;
 
 namespace RasControlWeb
 {
@@ -108,6 +109,24 @@ namespace RasControlWeb
             }
         }
 
+        public bool ValidaNumero(string numero)
+        {
+            Regex rx = new Regex(@"^\d+$");
+            return rx.IsMatch(numero);
+        }
+
+        public bool ValidaCPF(string cpf)
+        {
+            Regex rx = new Regex(@"^\d{3}\.\d{3}\.\d{3}-\d{2}$");
+            return rx.IsMatch(cpf);
+        }
+
+        public bool ValidaEmail(string email)
+        {
+            Regex rx = new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
+            return rx.IsMatch(email);
+        }
+
         protected void btGravar_Click(object sender, EventArgs e)
         {
             lbErro.Text = string.Empty;
@@ -159,7 +178,19 @@ namespace RasControlWeb
             }
             catch (Exception ex)
             {
+                if (!ValidaCPF(tbCpf.Text.ToString()))
+                {
+                    lbErro.Text = ex.Message;
+                }
+                else if (!ValidaEmail(tbEmail.Text.ToString()))
+                {
+                    lbErro.Text = ex.Message;
+                }
+                else
+                {
                 lbErro.Text = ex.Message;
+
+                }
 
             }
         }
