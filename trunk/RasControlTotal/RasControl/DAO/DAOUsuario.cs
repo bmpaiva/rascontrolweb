@@ -41,6 +41,7 @@ namespace DAO
                     usuario.Rg = (string)dr["RG"].ToString();
                     usuario.Senha = (string)dr["SENHA"].ToString();
                     usuario.Observacao = (string)dr["OBSERVACAO"].ToString();
+                    usuario.PerfilUsuario = new DAOPerfilUsuario().ConsultarPerfilUsuarioCodigo((int)dr["ID_PERFILUSUARIO"]);
                     lista.Add(usuario);
                 }
                 dr.Close();
@@ -87,6 +88,7 @@ namespace DAO
                 usuario.Rg = (string)dr["RG"].ToString();
                 usuario.Senha = (string)dr["SENHA"].ToString();
                 usuario.Observacao = (string)dr["OBSERVACAO"].ToString();
+                usuario.PerfilUsuario = new DAOPerfilUsuario().ConsultarPerfilUsuarioCodigo((int)dr["ID_PERFILUSUARIO"]);
 
 
                 dr.Close();
@@ -133,6 +135,7 @@ namespace DAO
                     usuario.Rg = (string)dr["RG"].ToString();
                     usuario.Senha = (string)dr["SENHA"].ToString();
                     usuario.Observacao = (string)dr["OBSERVACAO"].ToString();
+                    usuario.PerfilUsuario = new DAOPerfilUsuario().ConsultarPerfilUsuarioCodigo((int)dr["ID_PERFILUSUARIO"]);
                     lista.Add(usuario);
                 }
                 dr.Close();
