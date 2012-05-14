@@ -488,6 +488,44 @@ namespace Controlador
             }
         }
 
+        public List<Usuario> ConsultarAllUsuarioProjeto(int idProjeto)
+        {
+          try
+          {
+            return iDaoProjeto.ConsultarAllUsuarioProjeto(idProjeto);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
+        }
+
+        public void CadastrarUsuarioProjeto(int idProjeto, Usuario usuario)
+        {
+
+          try
+          {
+            iDaoProjeto.CadastrarUsuarioProjeto(idProjeto, usuario);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
+        }
+
+        public void DeletarUsuarioProjeto(int idUsuario, int idProjeto)
+        {
+          try
+          {
+            iDaoProjeto.DeleteUsuarioProjeto(idUsuario, idProjeto);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
+        }
+
+
         #endregion
 
         #region Atividade
