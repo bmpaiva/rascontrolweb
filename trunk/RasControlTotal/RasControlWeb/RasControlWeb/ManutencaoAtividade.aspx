@@ -19,7 +19,11 @@
     <tr>
     
         <td>Cod. Tipo Ativ:</td>
-        <td><asp:TextBox ID="tbCodigoTipoAtividade" runat="server"></asp:TextBox></td>    
+        <td>
+            <asp:DropDownList ID="dropboxTipoAtividade" runat="server" Height="24px"                
+                Width="110px">
+            </asp:DropDownList>
+        </td>    
     
     </tr>
 
