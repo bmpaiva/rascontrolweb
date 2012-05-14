@@ -11,11 +11,17 @@ namespace RasControlWeb
 {
     public partial class ManutencaoAtividade : System.Web.UI.Page
     {
+        WebServiceRasControl service = new WebServiceRasControl();
 
         string tipoTela = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (!IsPostBack)
+            {
+                this.BindGrid();
+            }
 
             tipoTela = (string)Session["TipoTela"];
 
@@ -30,12 +36,13 @@ namespace RasControlWeb
             {
                 lbErro.Text = string.Empty;
                 tbCodigoAtividade.Text = "";
-                tbCodigoTipoAtividade.Text = "";
+                //   tbCodigoTipoAtividade.Text = "";
+                dropboxTipoAtividade.Text = "";
                 tbCodigoEstoriaSprint.Text = "";
                 tbDescricao.Text = "";
                 tbDuracaoEstimada.Text = "";
                 tbDuracaoRealizada.Text = "";
-                
+
 
 
                 if (tipoTela == "Inclusao")
@@ -53,12 +60,21 @@ namespace RasControlWeb
                     this.CarregarAtividadeTela(id_atividade);
                     ControleEnableDisable(false);
                 }
+                            
             }
+        }
+
+        private void BindGrid()
+        {
+            dropboxTipoAtividade.DataSource = service.ConsultarAllTipoAtividadeFiltros(-1, null);
+            dropboxTipoAtividade.DataTextField = "descricao";
+            dropboxTipoAtividade.DataValueField = "codigo";
+            dropboxTipoAtividade.DataBind();
         }
 
         private void ControleEnableDisable(Boolean status)
         {
-            tbCodigoTipoAtividade.ReadOnly = !status;
+          //  tbCodigoTipoAtividade.ReadOnly = !status;
             tbCodigoEstoriaSprint.ReadOnly = !status;
             tbDescricao.ReadOnly = !status;
             tbDuracaoEstimada.ReadOnly = !status;
@@ -80,8 +96,8 @@ namespace RasControlWeb
 
                 tbCodigoAtividade.Text = atividade.Id_Atividade.ToString();
                 tbDescricao.Text = atividade.Descricao;
-
-                tbCodigoTipoAtividade.Text = atividade.Id_Tipo_Atividade.ToString();
+                dropboxTipoAtividade.Text = atividade.Id_Tipo_Atividade.ToString();
+            //    tbCodigoTipoAtividade.Text = atividade.Id_Tipo_Atividade.ToString();
                 tbCodigoEstoriaSprint.Text = atividade.Id_Estoria_Sprint.ToString();
                 tbDuracaoEstimada.Text = atividade.Duracao_Estimada.ToString();
                 tbDuracaoRealizada.Text = atividade.Duracao_Realizada.ToString();
@@ -119,7 +135,8 @@ namespace RasControlWeb
 
                     atividade.Descricao = tbDescricao.Text;
 
-                    atividade.Id_Tipo_Atividade = int.Parse(tbCodigoTipoAtividade.Text);
+                  //  atividade.Id_Tipo_Atividade = int.Parse(tbCodigoTipoAtividade.Text);
+                    atividade.Id_Tipo_Atividade = int.Parse(dropboxTipoAtividade.Text);
                     atividade.Id_Estoria_Sprint = int.Parse(tbCodigoEstoriaSprint.Text);
                     atividade.Duracao_Estimada = float.Parse(tbDuracaoEstimada.Text);
                     atividade.Duracao_Realizada = float.Parse(tbDuracaoRealizada.Text);
@@ -139,7 +156,7 @@ namespace RasControlWeb
                     atividade.Id_Atividade = int.Parse(tbCodigoAtividade.Text);
                     atividade.Descricao = tbDescricao.Text;
 
-                    atividade.Id_Tipo_Atividade = int.Parse(tbCodigoTipoAtividade.Text);
+                 //   atividade.Id_Tipo_Atividade = int.Parse(tbCodigoTipoAtividade.Text);
                     atividade.Id_Estoria_Sprint = int.Parse(tbCodigoEstoriaSprint.Text);
                     atividade.Duracao_Estimada = double.Parse(tbDuracaoEstimada.Text);
                     atividade.Duracao_Realizada = double.Parse(tbDuracaoRealizada.Text);
