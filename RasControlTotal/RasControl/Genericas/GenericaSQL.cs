@@ -41,7 +41,7 @@ namespace Genericas
             query.Append(" FROM TBUSUARIO ");
             //e quando o indice for "S"
             query.Append(" Where IND_ATIVO = 'S'");
-            if (cpf != "")
+            if (cpf != "" && cpf != null)
             {
                 query.Append(" And CPF = '" + cpf + "'");
             }
@@ -327,7 +327,7 @@ namespace Genericas
             query.Append(" SELECT ID_PROJETO, DESCRICAO");
             query.Append(" FROM TBPROJETO ");
             query.Append(" Where IND_ATIVO = 'S'");
-            if (descricao != "")
+            if (descricao != "" && descricao != null)
             {
                 query.Append(" And DESCRICAO = '" + descricao + "'");
             }
@@ -379,6 +379,37 @@ namespace Genericas
             return "UPDATE TBPROJETO SET IND_ATIVO = 'N' WHERE ID_PROJETO = " + idProjeto + " AND  IND_ATIVO = 'S'";
         }
 
+        public static string CadastrarUsuarioProjeto(int idProjeto, Usuario usuario)
+        {
+          return "INSERT INTO TBUSUARIOPROJETO " +
+                 " ( ID_USUARIO, " +
+                 " ID_PROJETO, " +
+                 " IND_ATIVO ) " +
+                 " VALUES (" +
+                 " " + usuario.Codigo.ToString() + ", " +
+                 " " + idProjeto.ToString() + ", " +
+                 " 'S' " +
+                  ")";
+
+        }
+
+        public static string ConsultarAllUsuarioProjeto(int idProjeto)
+        {
+          StringBuilder query = new StringBuilder();
+          query.Append(" SELECT ID_USUARIO ");
+          query.Append(" FROM TBUSUARIOPROJETO ");
+
+          if (idProjeto >= 0)
+          {
+            query.Append(" Where ID_PROJETO = " + idProjeto.ToString());
+          }
+          return query.ToString();
+        }
+
+        public static string DeleteUsuarioProjeto(int idUsuario, int idProjeto)
+        {
+          return "DELETE FROM TBUSUARIOPROJETO WHERE ID_USUARIO = " + idUsuario.ToString() + " AND  ID_PROJETO = " + idProjeto.ToString();
+        }
 
         #endregion
 
