@@ -14,5 +14,10 @@ namespace IDAO
     void CadastrarProjeto(Projeto projeto);
     void UpdateProjeto(Projeto projeto);
     void DeleteProjeto(int id);
+
+    List<Usuario> ConsultarAllUsuarioProjeto(int idProjeto);
+    void CadastrarUsuarioProjeto(int idProjeto, Usuario usuario);
+    void DeleteUsuarioProjeto(int idUsuario, int idProjeto);
+
   }
 }
