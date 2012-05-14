@@ -182,5 +182,39 @@ namespace DAO
             GenericaDAO dao = GenericaDAO.getInstancia();
             dao.ExecuteNonQuery(CommandType.Text, sql);
         }
+
+
+      //testando
+        public List<Usuario> ConsultarAllUsuarioProjeto(int idProjeto)
+        {
+          GenericaDAO dao = GenericaDAO.getInstancia();
+
+          try
+          {
+            List<Usuario> lista = new List<Usuario>();
+            string sql = GenericaSQL.ConsultarAllUsuarioProjeto(idProjeto);
+
+            SqlDataReader dr = dao.ExecuteReader(CommandType.Text, sql);
+
+            while (dr.Read())
+            {
+              int idUsuario = (int)dr["ID_USUARIO"];
+              Usuario usuario = ConsultarUsuarioCodigo(idUsuario);
+              lista.Add(usuario);
+            }
+            dr.Close();
+
+            return lista;
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
+          finally
+          {
+
+          }
+        }
+      //fimteste
     }
 }
