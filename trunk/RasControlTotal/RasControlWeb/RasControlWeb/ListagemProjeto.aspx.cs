@@ -130,9 +130,22 @@ namespace RasControlWeb
 
                 int id = Int16.Parse(Server.HtmlDecode(row.Cells[0].Text));
 
-                Session["PaginaOrigem"] = "ListagemSprint.aspx";
+                Session["PaginaOrigem"] = "ListagemProjeto.aspx";
 
                 Response.Redirect("ListagemSprint.aspx?idProjeto=" + id.ToString());
+
+            }
+            else if (e.CommandName == "Usuarios")
+            {
+              int index = Convert.ToInt32(e.CommandArgument);
+
+              GridViewRow row = GridView1.Rows[index];
+
+              int id = Int16.Parse(Server.HtmlDecode(row.Cells[0].Text));
+
+              Session["PaginaOrigem"] = "ListagemProjeto.aspx";
+
+              Response.Redirect("UsuarioProjeto.aspx?idProjeto=" + id.ToString());
 
             }
             GridView1.DataBind();
