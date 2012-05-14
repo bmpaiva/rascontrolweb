@@ -287,6 +287,10 @@ namespace Controlador
             {
                 throw new ExceptionGeral("O telefone do usuario não pode ser nula");
             }
+            else if (usuario.PerfilUsuario == null)
+            {
+                throw new ExceptionGeral("O perfil do usuario não pode ser nulo");
+            }
         }
 
         //metodo para cadastrar usuario
