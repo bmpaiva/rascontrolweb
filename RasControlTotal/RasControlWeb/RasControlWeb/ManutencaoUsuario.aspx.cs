@@ -54,6 +54,11 @@ namespace RasControlWeb
                     this.CarregarUsuarioTela(idUsuario);
                     ControleEnableDisable(false);
                 }
+
+                dpTipoUsuario.DataSource =  Fachada.Fachada.Instancia.ConsultarAllPerfilUsuarioFiltros(-1, null);
+                dpTipoUsuario.DataTextField = "descricao";
+                dpTipoUsuario.DataValueField = "codigo";
+                dpTipoUsuario.DataBind();      
             }
 
         }
@@ -70,6 +75,7 @@ namespace RasControlWeb
             tbRg.ReadOnly = !status;
             tbSenha.ReadOnly = !status;
             tbTelefone.ReadOnly = !status;
+            dpTipoUsuario.Enabled = status;
             btGravar.Enabled = status;
         }
 
@@ -89,6 +95,7 @@ namespace RasControlWeb
                 tbRg.Text = usuario.Rg;
                 tbSenha.Text = usuario.Senha;
                 tbTelefone.Text = usuario.Telefone;
+                dpTipoUsuario.SelectedValue = usuario.PerfilUsuario.Codigo.ToString();
             }
             catch (Exception ex)
             {
@@ -145,6 +152,7 @@ namespace RasControlWeb
                     usuario.Rg = tbRg.Text;
                     usuario.Senha = tbSenha.Text;
                     usuario.Observacao = tbObservacao.Text;
+                    usuario.PerfilUsuario = Fachada.Fachada.Instancia.ConsultarPerfilUsuarioPorId(int.Parse(dpTipoUsuario.SelectedValue));
 
                     Fachada.Fachada.Instancia.CadastrarUsuario(usuario);
 
@@ -167,6 +175,7 @@ namespace RasControlWeb
                     usuario.Rg = tbRg.Text;
                     usuario.Senha = tbSenha.Text;
                     usuario.Observacao = tbObservacao.Text;
+                    usuario.PerfilUsuario = Fachada.Fachada.Instancia.ConsultarPerfilUsuarioPorId(int.Parse(dpTipoUsuario.SelectedValue));
 
                     Fachada.Fachada.Instancia.AlterarUsuario(usuario);
 
