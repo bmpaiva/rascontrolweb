@@ -323,6 +323,46 @@ namespace Fachada
             }
         }
 
+
+        public List<Usuario> ConsultarAllUsuarioProjeto(int idProjeto)
+        {
+          try
+          {
+            return controlador.ConsultarAllUsuarioProjeto(idProjeto);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
+        }
+
+        public void CadastrarUsuarioProjeto(int idProjeto,Usuario usuario)
+        {
+          try
+          {
+            controlador.CadastrarUsuarioProjeto(idProjeto, usuario);
+
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
+        }
+
+        public void DeletarUsuarioProjeto(int idUsuario, int idProjeto)
+        {
+          try
+          {
+            controlador.DeletarUsuarioProjeto(idUsuario, idProjeto);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
+        }
+
+
+
         #endregion
 
         #region Atividade
