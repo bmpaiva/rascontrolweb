@@ -41,6 +41,7 @@
             <asp:ButtonField ButtonType="Button" CommandName="Remover" Text="Remover" />
             <asp:ButtonField CommandName="Sprints" Text="Sprints" />
             <asp:ButtonField CommandName="Estorias" Text="Estorias" />
+             <asp:ButtonField CommandName="Usuarios" Text="Usuarios" />
         </Columns>
         <FooterStyle BackColor="#CCCCCC" />
         <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
