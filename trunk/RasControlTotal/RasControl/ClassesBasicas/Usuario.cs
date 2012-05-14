@@ -17,6 +17,7 @@ namespace ClassesBasicas
       private string rg;
       private string login;
       private string senha;
+      private PerfilUsuario perfilUsuario;
 
       //declarar um contrustor vazio
       public Usuario()
@@ -82,6 +83,12 @@ namespace ClassesBasicas
       {
           get { return this.senha; }
           set { this.senha = value; }
+      }
+
+      public PerfilUsuario PerfilUsuario
+      {
+          get { return this.perfilUsuario; }
+          set { this.perfilUsuario = value; }
       }
   }
 }
