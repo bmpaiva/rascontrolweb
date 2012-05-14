@@ -55,14 +55,23 @@
         <tr>            
             <td><asp:Label ID="Label7" runat="server" Text="Email:"></asp:Label></td>
             <td><asp:TextBox ID="tbEmail" runat="server" Width="320px"></asp:TextBox></td>
-            <td><asp:Label ID="Label8" runat="server" Text="Login:"></asp:Label></td>
-            <td><asp:TextBox ID="tbLogin" runat="server" Width="320px"></asp:TextBox></td>
+            <td><asp:Label ID="Label11" runat="server" Text="T. Usuário:"></asp:Label></td>
+          <td>
+              <asp:DropDownList ID="dpTipoUsuario" runat="server" Width="320px">
+              </asp:DropDownList>
+            </td> 
+            
         </tr>       
         <tr>            
+            <td><asp:Label ID="Label8" runat="server" Text="Login:"></asp:Label></td>
+            <td><asp:TextBox ID="tbLogin" runat="server" Width="320px"></asp:TextBox></td>
             <td><asp:Label ID="Label9" runat="server" Text="Senha:"></asp:Label></td>
-            <td><asp:TextBox ID="tbSenha" runat="server" Width="320px"></asp:TextBox></td>
-             <td><asp:Label ID="Label10" runat="server" Text="Observação:"></asp:Label></td>
-            <td><asp:TextBox ID="tbObservacao" runat="server" Width="320px"></asp:TextBox></td>
+            <td><asp:TextBox ID="tbSenha" runat="server" Width="320px"></asp:TextBox></td>             
+        </tr>
+        <tr> 
+          <td><asp:Label ID="Label10" runat="server" Text="Observação:"></asp:Label></td>
+          <td><asp:TextBox ID="tbObservacao" runat="server" Width="320px"></asp:TextBox></td>           
+                     
         </tr>
                
     </table>
