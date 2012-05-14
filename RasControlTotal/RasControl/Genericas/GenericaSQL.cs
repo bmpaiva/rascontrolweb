@@ -17,7 +17,7 @@ namespace Genericas
         {
             StringBuilder query = new StringBuilder();
             //Quais os dados que serão selecionados
-            query.Append(" SELECT ID_USUARIO, NOME, OBSERVACAO, TELEFONE, CELULAR, CPF, RG, LOGIN, SENHA, EMAIL");
+            query.Append(" SELECT ID_USUARIO, NOME, OBSERVACAO, TELEFONE, CELULAR, CPF, RG, LOGIN, SENHA, EMAIL, ID_PERFILUSUARIO");
             //Qual a tabela de onde será buscado
             query.Append(" FROM TBUSUARIO ");
             //e quando o indice for "S"
@@ -36,7 +36,7 @@ namespace Genericas
         {
             StringBuilder query = new StringBuilder();
             //Quais os dados que serão selecionados
-            query.Append(" SELECT ID_USUARIO, NOME, OBSERVACAO, TELEFONE, CELULAR, CPF, RG, LOGIN, SENHA, EMAIL");
+            query.Append(" SELECT ID_USUARIO, NOME, OBSERVACAO, TELEFONE, CELULAR, CPF, RG, LOGIN, SENHA, EMAIL, ID_PERFILUSUARIO");
             //Qual a tabela de onde será buscado
             query.Append(" FROM TBUSUARIO ");
             //e quando o indice for "S"
@@ -57,7 +57,7 @@ namespace Genericas
         {
             StringBuilder query = new StringBuilder();
             //Quais os dados que serão selecionados
-            query.Append(" SELECT ID_USUARIO, NOME, OBSERVACAO, TELEFONE, CELULAR, CPF, RG, LOGIN, SENHA, EMAIL");
+            query.Append(" SELECT ID_USUARIO, NOME, OBSERVACAO, TELEFONE, CELULAR, CPF, RG, LOGIN, SENHA, EMAIL, ID_PERFILUSUARIO");
             //Qual a tabela de onde será buscado
             query.Append(" FROM TBUSUARIO ");
             //e quando o indice for "S"
@@ -70,10 +70,10 @@ namespace Genericas
         public static string CadastrarUsuario(Usuario usuario)
         {
             return "INSERT INTO TBUSUARIO " +
-                   " ( NOME, TELEFONE,  CELULAR,  CPF,  RG, EMAIL, LOGIN, SENHA, OBSERVACAO, IND_ATIVO  ) " +
+                   " ( NOME, TELEFONE,  CELULAR,  CPF,  RG, EMAIL, LOGIN, SENHA, OBSERVACAO, IND_ATIVO, ID_PERFILUSUARIO  ) " +
                    " VALUES (" +
                    " '" + usuario.Nome + "', '" + usuario.Telefone + "',  '" + usuario.Celular + "',  '" + usuario.Cpf + "', '" + usuario.Rg + "', " +
-                   " '" + usuario.Email + "', '" + usuario.Login + "', '" + usuario.Senha + "', '" + usuario.Observacao + "', 'S' );";
+                   " '" + usuario.Email + "', '" + usuario.Login + "', '" + usuario.Senha + "', '" + usuario.Observacao + "', 'S', " + usuario.PerfilUsuario.Codigo + " );";
         }
 
         //Metodo para alterar
@@ -88,7 +88,8 @@ namespace Genericas
             + "EMAIL = '" + usuario.Email + "' , "
             + "LOGIN = '" + usuario.Login + "' , "
             + "SENHA = '" + usuario.Senha + "' , "
-            + "OBSERVACAO = '" + usuario.Observacao + "' "
+            + "OBSERVACAO = '" + usuario.Observacao + "', "
+            + "ID_PERFILUSUARIO = " + usuario.PerfilUsuario.Codigo + " "            
             + " WHERE ID_USUARIO = " + usuario.Codigo + " AND  IND_ATIVO = 'S'";
         }
 
@@ -97,6 +98,25 @@ namespace Genericas
         {
             return "UPDATE TBUSUARIO SET IND_ATIVO = 'N' WHERE ID_USUARIO = " + idUsuario + " AND  IND_ATIVO = 'S'";
         }
+
+        //Consultar os usuarios pelo codigo e pelo cpf
+        public static string ValidarLogin(string login, string senha)
+        {
+            StringBuilder query = new StringBuilder();          
+            query.Append(" SELECT LOGIN, SENHA");
+            query.Append(" FROM TBUSUARIO ");           
+            query.Append(" Where IND_ATIVO = 'S'");
+            if (login != "")
+            {
+                query.Append(" And LOGIN = '" + login + "'");
+            }
+            if (senha != "")
+            {
+                query.Append(" And SENHA = '" + senha + "'");
+            }
+            return query.ToString();
+        }
+
 
         #endregion
 
@@ -556,7 +576,7 @@ namespace Genericas
             query.Append(" SELECT ID_PERFIL_USUARIO, DESCRICAO ");
             query.Append(" FROM TBPERFILUSUARIO ");
             query.Append(" Where IND_ATIVO = 'S'");
-            if (descricao != "")
+            if (descricao != "" && descricao != null)
             {
                 query.Append(" And DESCRICAO = '" + descricao + "'");
             }
