@@ -863,6 +863,47 @@ namespace WebService
             }
         }
 
+        [WebMethod]
+        public void CadastrarUsuarioProjeto(int idProjeto, Usuario usuario)
+        {
+          try
+          {
+            Fachada.Fachada.Instancia.CadastrarUsuarioProjeto(idProjeto, usuario);
+
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
+        }
+
+        [WebMethod]
+        public void DeletarUsuarioProjeto(int idUsuario, int idProjeto)
+        {
+          try
+          {
+            Fachada.Fachada.Instancia.DeletarUsuarioProjeto(idUsuario, idProjeto);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
+        }
+
+        [WebMethod]
+        public List<Usuario> ConsultarAllUsuarioProjeto(int idProjeto)
+        {
+          try
+          {
+            return Fachada.Fachada.Instancia.ConsultarAllUsuarioProjeto(idProjeto);
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
+        }
+            
+
 
         #endregion
 
