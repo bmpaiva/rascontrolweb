@@ -831,7 +831,7 @@ namespace Genericas
             query.Append(" SELECT ID_TIPOATIVIDADE, DESCRICAO");
             query.Append(" FROM TBTIPOATIVIDADE ");
             query.Append(" Where IND_ATIVO = 'S'");
-            if (descricao != "")
+            if (descricao != "" && descricao != null)
             {
                 query.Append(" And DESCRICAO = '" + descricao + "'");
             }
