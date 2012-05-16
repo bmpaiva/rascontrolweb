@@ -22,15 +22,6 @@ namespace RasControlWeb {
         protected global::System.Web.UI.WebControls.TextBox tbCodigoAtividade;
         
         /// <summary>
-        /// tbCodigoTipoAtividade control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbCodigoTipoAtividade;
-        
-        /// <summary>
         /// tbCodigoEstoriaSprint control.
         /// </summary>
         /// <remarks>

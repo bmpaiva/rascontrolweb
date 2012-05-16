@@ -12,7 +12,7 @@
      <tr>
       <td align="center" class="style1" rowspan="1">
        
-          Listagem de Atividades</td>
+          <b>Listagem de Atividades</b></td>
      <//tr>
      <tr>
     
@@ -20,10 +20,6 @@
     <td><asp:TextBox ID="tbCodigoAtividade" runat="server"></asp:TextBox></td>
         </tr>
     <br /> 
-        <tr>
-    <td class="style1">Cod. Tipo Ativ:</td>
-    <td><asp:TextBox ID="tbCodigoTipoAtividade" runat="server"></asp:TextBox></td>
-        </tr>
     <br />
         <tr>
     <td class="style1">Código Estória Sprint:</td>
