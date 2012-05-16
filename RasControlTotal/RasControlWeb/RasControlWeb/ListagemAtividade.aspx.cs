@@ -27,7 +27,7 @@ namespace RasControlWeb
             try
             {
                 id_atividade = int.Parse(tbCodigoAtividade.Text);
-                id_tipo_atividade = int.Parse(tbCodigoTipoAtividade.Text);
+                id_tipo_atividade = 
                 id_estoria_sprint = int.Parse(tbCodigoEstoriaSprint.Text);
                 duracao_estimada = double.Parse(tbDuracaoEstimada.Text);
                 duracao_realizada = double.Parse(tbDuracaoRealizada.Text);
