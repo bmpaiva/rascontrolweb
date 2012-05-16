@@ -1,0 +1,58 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="RasControlWeb.MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="Form1" runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                    <img src="imagens/logo.png" width="150" height="150" />
+                </h1>
+            </div>
+            <div class="loginDisplay">
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Index.aspx" Text="Home"/>
+                        <asp:MenuItem Text="Cadastros" Value="Cadastros">
+                            <asp:MenuItem NavigateUrl="~/ListagemUsuario.aspx" Text="Usuário" 
+                                Value="Usuário"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/ListagemPerfilUsuario.aspx" Text="Perfil" 
+                                Value="Perfil"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/ListagemPermissoes.aspx" Text="Permissão" 
+                                Value="Permissão"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/ListagemProjeto.aspx" Text="Projeto" 
+                                Value="Projeto"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Movimentações" Value="Movimentações"></asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" 
+                ViewStateMode="Enabled"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+        <p>© Copyright Seven, todos os direitos reservados.</p>
+    </div>
+    </form>
+</body>
+</html>
