@@ -1,0 +1,28 @@
+C:\Users\Edilson Júnior\Desktop\Edilson\RasControl\IDAO\bin\IDAO.dll
+C:\Users\Edilson Júnior\Desktop\Edilson\RasControl\IDAO\bin\IDAO.pdb
+C:\Users\Edilson Júnior\Desktop\Edilson\RasControl\IDAO\bin\ClassesBasicas.dll
+C:\Users\Edilson Júnior\Desktop\Edilson\RasControl\IDAO\bin\ClassesBasicas.pdb
+C:\Users\Edilson Júnior\Desktop\Edilson\RasControl\IDAO\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Edilson Júnior\Desktop\Edilson\RasControl\IDAO\obj\Debug\IDAO.dll
+C:\Users\Edilson Júnior\Desktop\Edilson\RasControl\IDAO\obj\Debug\IDAO.pdb
+C:\Users\Usuário\Documents\Visual Studio 2010\Projects\RasControl\IDAO\bin\IDAO.dll
+C:\Users\Usuário\Documents\Visual Studio 2010\Projects\RasControl\IDAO\bin\IDAO.pdb
+C:\Users\Usuário\Documents\Visual Studio 2010\Projects\RasControl\IDAO\bin\ClassesBasicas.dll
+C:\Users\Usuário\Documents\Visual Studio 2010\Projects\RasControl\IDAO\bin\ClassesBasicas.pdb
+C:\Users\Usuário\Documents\Visual Studio 2010\Projects\RasControl\IDAO\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Usuário\Documents\Visual Studio 2010\Projects\RasControl\IDAO\obj\Debug\IDAO.dll
+C:\Users\Usuário\Documents\Visual Studio 2010\Projects\RasControl\IDAO\obj\Debug\IDAO.pdb
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\RasControl\IDAO\bin\IDAO.dll
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\RasControl\IDAO\bin\IDAO.pdb
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\RasControl\IDAO\bin\ClassesBasicas.dll
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\RasControl\IDAO\bin\ClassesBasicas.pdb
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\RasControl\IDAO\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\RasControl\IDAO\obj\Debug\IDAO.dll
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\RasControl\IDAO\obj\Debug\IDAO.pdb
+C:\Users\Igor\Documents\Visual Studio 2010\Projects\RasControlWeb\RasControlTotal\RasControl\IDAO\bin\IDAO.dll
+C:\Users\Igor\Documents\Visual Studio 2010\Projects\RasControlWeb\RasControlTotal\RasControl\IDAO\bin\IDAO.pdb
+C:\Users\Igor\Documents\Visual Studio 2010\Projects\RasControlWeb\RasControlTotal\RasControl\IDAO\bin\ClassesBasicas.dll
+C:\Users\Igor\Documents\Visual Studio 2010\Projects\RasControlWeb\RasControlTotal\RasControl\IDAO\bin\ClassesBasicas.pdb
+C:\Users\Igor\Documents\Visual Studio 2010\Projects\RasControlWeb\RasControlTotal\RasControl\IDAO\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Igor\Documents\Visual Studio 2010\Projects\RasControlWeb\RasControlTotal\RasControl\IDAO\obj\Debug\IDAO.dll
+C:\Users\Igor\Documents\Visual Studio 2010\Projects\RasControlWeb\RasControlTotal\RasControl\IDAO\obj\Debug\IDAO.pdb
