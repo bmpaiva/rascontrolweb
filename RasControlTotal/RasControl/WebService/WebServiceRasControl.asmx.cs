@@ -710,6 +710,18 @@ namespace WebService
             }
         }
 
+        public Usuario ValidarLogin(string login, string senha)
+        {
+            try
+            {
+                return Fachada.Fachada.Instancia.ValidarLogin(login, senha);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         [WebMethod]
         public void AlterarUsuario(Usuario usuario)
         {
