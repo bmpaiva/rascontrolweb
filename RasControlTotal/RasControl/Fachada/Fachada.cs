@@ -244,6 +244,18 @@ namespace Fachada
             }
         }
 
+        public Usuario ValidarLogin(string login, string senha)
+        {
+            try
+            {
+                return controlador.ValidarLogin(login, senha);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         #endregion
 
         #region Projeto
