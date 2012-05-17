@@ -16,6 +16,7 @@ namespace IDAO
         void CadastrarUsuario(Usuario usuario);
         void UpdateUsuario(Usuario usuario);
         void DeleteUsuario(int id);
+        Usuario ValidarLogin(string login, string senha);
 
        
     }
