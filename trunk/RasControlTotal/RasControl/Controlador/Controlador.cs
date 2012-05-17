@@ -396,6 +396,30 @@ namespace Controlador
             }
         }
 
+        public Usuario ValidarLogin(string login, string senha)
+        {
+            Usuario usuario = new Usuario();
+            if (login == "" || login == null)
+            {
+                throw new ExceptionGeral("O login não pode ser nulo");
+            }
+            else if (senha == "" || senha == null)
+            {
+                throw new ExceptionGeral("A senha não pode ser nula");
+            }
+            else
+            {
+                usuario = iDAOUsuario.ValidarLogin(login, senha);
+            }
+            if (usuario == null)
+            {
+                throw new ExceptionGeral("Login ou senha invalidos");
+            }
+            return usuario;
+
+
+        }
+
         #endregion Usuario
 
         #region Projeto
@@ -918,7 +942,7 @@ namespace Controlador
 
         public void ValidarSprint(Sprint sprint)
         {
-            if (sprint.Id_Projeto == null)
+            if (sprint.Id_Projeto <= 0)
             {
                 throw new ExceptionGeral("O Id do projeto da Sprint não pode ser nula");
             }
@@ -934,7 +958,7 @@ namespace Controlador
             {
                 throw new ExceptionGeral("A data do fim da sprint não pode ser nula");
             }
-            else if (sprint.Qtd_Dias == null)
+            else if (sprint.Qtd_Dias <= 0)
             {
                 throw new ExceptionGeral("A quantidade de dias da sprint não pode ser nula");
             }
