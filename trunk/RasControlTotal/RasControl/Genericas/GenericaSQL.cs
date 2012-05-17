@@ -102,10 +102,10 @@ namespace Genericas
         //Consultar os usuarios pelo codigo e pelo cpf
         public static string ValidarLogin(string login, string senha)
         {
-            StringBuilder query = new StringBuilder();          
-            query.Append(" SELECT LOGIN, SENHA");
+            StringBuilder query = new StringBuilder();
+            query.Append(" SELECT ID_USUARIO, NOME, OBSERVACAO, TELEFONE, CELULAR, CPF, RG, LOGIN, SENHA, EMAIL, ID_PERFILUSUARIO ");
             query.Append(" FROM TBUSUARIO ");           
-            query.Append(" Where IND_ATIVO = 'S'");
+            query.Append(" Where 1=1");
             if (login != "")
             {
                 query.Append(" And LOGIN = '" + login + "'");
