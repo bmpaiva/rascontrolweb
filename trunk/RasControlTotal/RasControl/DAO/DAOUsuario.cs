@@ -68,29 +68,74 @@ namespace DAO
             try
             {
                 //Verifica no banco se existe algum dado e cria uma lista com esses dados encontrados
-                Usuario usuario = null;
+              
                 string sql = GenericaSQL.ConsultarUsuarioCodigo(codigo);
+                Usuario usuario = new Usuario();
+                //Executa a função SQL para puxar esses dados e lista em texto
+                SqlDataReader dr = dao.ExecuteReader(CommandType.Text, sql);
+
+                while (dr.Read())
+                {
+                    //Instancia um usuario e Lista tudo                  
+                    usuario.Codigo = (int)dr["ID_USUARIO"];
+                    usuario.Nome = (string)dr["NOME"].ToString();
+                    usuario.Telefone = (string)dr["TELEFONE"].ToString();
+                    usuario.Celular = (string)dr["CELULAR"].ToString();
+                    usuario.Cpf = (string)dr["CPF"].ToString();
+                    usuario.Email = (string)dr["EMAIL"].ToString();
+                    usuario.Login = (string)dr["LOGIN"].ToString();
+                    usuario.Rg = (string)dr["RG"].ToString();
+                    usuario.Senha = (string)dr["SENHA"].ToString();
+                    usuario.Observacao = (string)dr["OBSERVACAO"].ToString();
+                    usuario.PerfilUsuario = new DAOPerfilUsuario().ConsultarPerfilUsuarioCodigo((int)dr["ID_PERFILUSUARIO"]);                  
+                }
+
+                return usuario;
+            }
+            //Caso tenha algum problema, será exibido uma exceção
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+
+            }
+        }
+
+        //Metodo de Consultar usuario pelo codigo
+        public Usuario ValidarLogin(string login, string senha)
+        {
+            //Instancia a classe GENERICADAO para poder puxar os dados
+            GenericaDAO dao = GenericaDAO.getInstancia();
+
+            try
+            {
+                //Verifica no banco se existe algum dado e cria uma lista com esses dados encontrados
+                Usuario usuario = null;
+                string sql = GenericaSQL.ValidarLogin(login, senha);
 
                 //Executa a função SQL para puxar esses dados e lista em texto
                 SqlDataReader dr = dao.ExecuteReader(CommandType.Text, sql);
 
-                dr.Read();
+                while (dr.Read())
+                {
 
-                //Instancia um usuario e Lista tudo
-                usuario = new Usuario();
-                usuario.Codigo = (int)dr["ID_USUARIO"];
-                usuario.Nome = (string)dr["NOME"].ToString();
-                usuario.Telefone = (string)dr["TELEFONE"].ToString();
-                usuario.Celular = (string)dr["CELULAR"].ToString();
-                usuario.Cpf = (string)dr["CPF"].ToString();
-                usuario.Email = (string)dr["EMAIL"].ToString();
-                usuario.Login = (string)dr["LOGIN"].ToString();
-                usuario.Rg = (string)dr["RG"].ToString();
-                usuario.Senha = (string)dr["SENHA"].ToString();
-                usuario.Observacao = (string)dr["OBSERVACAO"].ToString();
-                usuario.PerfilUsuario = new DAOPerfilUsuario().ConsultarPerfilUsuarioCodigo((int)dr["ID_PERFILUSUARIO"]);
+                    //Instancia um usuario e Lista tudo
+                    usuario = new Usuario();
+                    usuario.Codigo = (int)dr["ID_USUARIO"];
+                    usuario.Nome = (string)dr["NOME"].ToString();
+                    usuario.Telefone = (string)dr["TELEFONE"].ToString();
+                    usuario.Celular = (string)dr["CELULAR"].ToString();
+                    usuario.Cpf = (string)dr["CPF"].ToString();
+                    usuario.Email = (string)dr["EMAIL"].ToString();
+                    usuario.Login = (string)dr["LOGIN"].ToString();
+                    usuario.Rg = (string)dr["RG"].ToString();
+                    usuario.Senha = (string)dr["SENHA"].ToString();
+                    usuario.Observacao = (string)dr["OBSERVACAO"].ToString();
+                    usuario.PerfilUsuario = new DAOPerfilUsuario().ConsultarPerfilUsuarioCodigo((int)dr["ID_PERFILUSUARIO"]);
 
-
+                }
                 dr.Close();
 
                 return usuario;
